@@ -1,0 +1,71 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "outletnerd\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "outletnerd\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-14T14:13:08.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "outletnerd\\Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "outletnerd\\Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-14T14:13:00.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "outletnerd\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "outletnerd\\Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-14T14:06:17.886Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
