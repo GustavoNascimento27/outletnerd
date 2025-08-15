@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd.csproj": {}
+    "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\outletnerd.csproj": {}
   },
   "projects": {
-    "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd.csproj": {
+    "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\outletnerd.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd.csproj",
+        "projectUniqueName": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\outletnerd.csproj",
         "projectName": "outletnerd",
-        "projectPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd.csproj",
+        "projectPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\outletnerd.csproj",
         "packagesPath": "C:\\Users\\3ds\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\obj\\",
+        "outputPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -26,6 +26,7 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

@@ -20,3 +20,13 @@ html {
 body {
   margin-bottom: 60px;
 }
+.navbar-murph{
+    background-color:darkred;
+    color:darkred;
+    /*TEM QUE USAR POSITION: FIXED NAS DIVS*/
+
+}
+.navbar-murph img{
+    width:60px;
+    height:60px;
+}
