@@ -4,36 +4,31 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - outletnerd</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/outletnerd.styles.css" asp-append-version="true" />
 </head>
 <body>
-    <header>
+    <header>                 
 
         <nav class="navbar-murph">
-            <div class="container-fluid">
+ 
                 <div class="logo">
                 <a class="navbar-murph" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
                 </div>
                 <div class="search-bar">
-                <form method="get" action="@Url.Action("Index", "YourController")" class="mb-3">
-    <div class="input-group">
-        <input type="text" name="searchTerm" class="form-control" placeholder="Search..."/>
-        <button type="submit" class="btn btn-primary">Search</button>
-        </<div>
-            </div>
-    </div>
-</form>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="btn">
-                <a class="navbar-murph"><img /></a>
-                <a class="navbar-murph"><img /></a>
+                    <form method="get" action="@Url.Action("Index", "YourController")">
+                        <div class="input-group">
+                            <input type="text" name="searchTerm" class="form-control" placeholder="Já tem algo em mente?"/>
+                            <button type="submit" class="btn btn-primary">Buscar</button>
+                        </div>
+                    </form>
                 </div>
-            </div>
+
+                
+                <div class="nav_btn">
+                <a class="navbar-murph"><img src="~/img/carrinho.png" ></a>
+                <a class="navbar-murph"><img src="~/img/usericon.png"> </a>
+                </div>
         </nav>
     </header>
     <div class="container">
@@ -48,7 +43,7 @@
         </div>
     </footer>
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>

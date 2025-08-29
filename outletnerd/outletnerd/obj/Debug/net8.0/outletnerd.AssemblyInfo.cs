@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("outletnerd")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4248acbf09299d27dd17e0435edcc4687017d9c2")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+67cd4eabb98a0b3eacbd4a0af24d15508872f491")]
 [assembly: System.Reflection.AssemblyProductAttribute("outletnerd")]
 [assembly: System.Reflection.AssemblyTitleAttribute("outletnerd")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

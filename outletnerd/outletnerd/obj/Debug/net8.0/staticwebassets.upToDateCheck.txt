@@ -1,5 +1,7 @@
 wwwroot\favicon.ico
+wwwroot\img\carrinho.png
 wwwroot\img\outlet.png
+wwwroot\img\usericon.png
 wwwroot\js\site.js
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css
 wwwroot\lib\bootstrap\dist\css\bootstrap-grid.css.map
