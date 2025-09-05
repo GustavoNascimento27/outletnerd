@@ -13,12 +13,12 @@
         <nav class="navbar-murph">
  
                 <div class="logo">
-                <a class="navbar-murph" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
                 </div>
                 <div class="search-bar">
                     <form method="get" action="@Url.Action("Index", "YourController")">
                         <div class="input-group">
-                            <input type="text" name="searchTerm" class="busca" placeholder="Já tem algo em mente?"/>
+                            <input type="text" name="searchTerm" class="busca" placeholder="   Já tem algo em mente?"/>
                             <button type="submit" class="btn-busca">Buscar</button>
                         </div>
                     </form>
@@ -26,10 +26,18 @@
 
                 
                 <div class="nav_btn">
-                <a class="navbar-murph"><img src="~/img/carrinho.png" ></a>
-                <a class="navbar-murph"><img src="~/img/usericon.png"> </a>
+                <a class="navbar-icon1"><img src="~/img/carrinho.png" ></a>
+                <a class="navbar-icon2"><img src="~/img/usericon.png"> </a>
                 </div>
+
         </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <h2 class="txtcategorias">Decorações Brinquedos Roupas Livros e Mangás</h2>
+            </div>
+
+        </div>
     </header>
     <div class="container">
         <main role="main" class="pb-3">

@@ -30,7 +30,6 @@ C:\Users\3ds\Desktop\outletnerd\outletnerd\obj\Debug\net8.0\ref\outletnerd.dll
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\appsettings.json
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.staticwebassets.runtime.json
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.staticwebassets.endpoints.json
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.exe
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.deps.json
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.runtimeconfig.json
@@ -48,12 +47,14 @@ C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\scopedcss
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\scopedcss\bundle\outletnerd.styles.css
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\scopedcss\projectbundle\outletnerd.bundle.scp.css
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.build.json
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.build.json.cache
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\outletnerd.dll
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\refint\outletnerd.dll
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\outletnerd.pdb
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\outletnerd.genruntimeconfig.cache
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\ref\outletnerd.dll
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.outletnerd.Microsoft.AspNetCore.StaticWebAssets.props
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.build.outletnerd.props
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.outletnerd.props
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.outletnerd.props
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.pack.json
