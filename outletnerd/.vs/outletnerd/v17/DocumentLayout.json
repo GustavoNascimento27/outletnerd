@@ -26,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "site.css",
-              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\wwwroot\\css\\site.css",
-              "RelativeDocumentMoniker": "outletnerd\\wwwroot\\css\\site.css",
-              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\wwwroot\\css\\site.css",
-              "RelativeToolTip": "outletnerd\\wwwroot\\css\\site.css",
-              "ViewState": "AQIAAEUAAAAAAAAAAAAowGkAAAASAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-15T11:18:22.8Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -49,9 +36,22 @@
               "RelativeDocumentMoniker": "outletnerd\\Views\\Shared\\_Layout.cshtml",
               "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Views\\Shared\\_Layout.cshtml",
               "RelativeToolTip": "outletnerd\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AQIAAA8AAAAAAAAAAAAAACQAAABaAAAA",
+              "ViewState": "AgIAABoAAAAAAAAAAAAcwCUAAAAkAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-14T14:13:08.706Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "outletnerd\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "outletnerd\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAF0AAAAAAAAAAAAuwHUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-15T11:18:22.8Z",
               "EditorCaption": ""
             },
             {
@@ -76,7 +76,8 @@
               "RelativeToolTip": "outletnerd\\Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-14T14:06:17.886Z"
+              "WhenOpened": "2025-08-14T14:06:17.886Z",
+              "EditorCaption": ""
             }
           ]
         }

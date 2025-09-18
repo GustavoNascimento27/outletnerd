@@ -53,8 +53,7 @@ C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\refint\ou
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\outletnerd.pdb
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\outletnerd.genruntimeconfig.cache
 C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\ref\outletnerd.dll
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.outletnerd.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.build.outletnerd.props
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.outletnerd.props
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.outletnerd.props
-C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.pack.json
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\bin\Debug\net8.0\outletnerd.staticwebassets.endpoints.json
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.build.json.cache
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.build.endpoints.json
+C:\Users\3ds\Desktop\outletnerd\outletnerd\outletnerd\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt

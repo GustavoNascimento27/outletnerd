@@ -102,10 +102,17 @@ body {
     flex-direction: row;
     align-items: center;
     color: white;
-    margin-left: 25px;
-    row-gap: 30px;
+    
 }
 
-.txtcategorias{
-
-}
+    .navbar-cat ul li {
+        margin-right: 30px;
+        list-style: none;
+        display: inline-block;
+       
+       
+    }
+        .navbar-cat ul li a {
+            color: white;
+            text-decoration: none;
+        }
