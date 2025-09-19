@@ -37,6 +37,7 @@ body {
 }
 
 .search-bar {
+    margin-left:15%;
     display: flex;
     align-items: center;
     width: 100%;
@@ -53,16 +54,18 @@ body {
 
 .busca {
     width: 500px; /* Define a largura do ícone */
-    height: 50px;
-    border-radius: 10px;
+    height: 55px;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
 }
 
 .btn-busca {
-    width: 200px; /* Define a largura do ícone */
+    width: 120px; /* Define a largura do ícone */
     height: 60px;
-    color:red;
-    background-color: black;
-    border-radius: 10px;
+    color: black;
+    background-color: white;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
 }
 
 .navbar-icon1 {

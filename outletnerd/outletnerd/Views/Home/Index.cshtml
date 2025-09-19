@@ -4,6 +4,46 @@
 
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <header>
+
+        <nav class="navbar-murph">
+
+            <div class="logo">
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
+            </div>
+            <div class="search-bar">
+                <form method="get" action="@Url.Action("Index", "YourController")">
+                    <div class="input-group">
+                        <button type="submit" class="btn-busca">Buscar</button>
+                        <input type="text" name="searchTerm" class="busca" placeholder="   Já tem algo em mente?" />
+                        
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="nav_btn">
+                <a class="navbar-icon1"><img src="~/img/carrinho.png"></a>
+                <a class="navbar-icon2"><img src="~/img/usericon.png"> </a>
+            </div>
+
+        </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <ul>
+                    <li> <a href="#">decoracoes</a>  </li>
+                    <li><a href="#">brinquedos</a></li>
+                    <li><a href="#">Livros e mangas</a></li>
+                    <li><a href="#">Roupas</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </header>
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2025 - outletnerd - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
 </div>
