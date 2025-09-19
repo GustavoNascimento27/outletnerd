@@ -3,6 +3,42 @@
   "WorkspaceRootPath": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\rep\\pedidorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\rep\\pedidorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\rep\\carrinhorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\rep\\carrinhorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\rep\\produtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\rep\\produtorep.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\controllers\\pedidocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\controllers\\carrinhocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\controllers\\produtocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\models\\pedido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\models\\carrinho.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\models\\produto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|c:\\users\\3ds\\desktop\\outletnerd\\outletnerd\\outletnerd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{CAE2AE82-E76F-4862-AAE8-34D4DEA52F65}|outletnerd\\outletnerd.csproj|solutionrelative:outletnerd\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
@@ -26,11 +62,128 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PedidoRep.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\PedidoRep.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Rep\\PedidoRep.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\PedidoRep.cs",
+              "RelativeToolTip": "outletnerd\\Rep\\PedidoRep.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:02:14.513Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 1,
+              "Title": "CarrinhoRep.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\CarrinhoRep.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Rep\\CarrinhoRep.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\CarrinhoRep.cs",
+              "RelativeToolTip": "outletnerd\\Rep\\CarrinhoRep.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:01:59.807Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "ProdutoRep.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\ProdutoRep.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Rep\\ProdutoRep.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Rep\\ProdutoRep.cs",
+              "RelativeToolTip": "outletnerd\\Rep\\ProdutoRep.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:01:45.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "PedidoController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\PedidoController.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Controllers\\PedidoController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\PedidoController.cs",
+              "RelativeToolTip": "outletnerd\\Controllers\\PedidoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:00:59.635Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CarrinhoController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\CarrinhoController.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Controllers\\CarrinhoController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\CarrinhoController.cs",
+              "RelativeToolTip": "outletnerd\\Controllers\\CarrinhoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:00:42.87Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProdutoController.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\ProdutoController.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Controllers\\ProdutoController.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Controllers\\ProdutoController.cs",
+              "RelativeToolTip": "outletnerd\\Controllers\\ProdutoController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T11:00:25.687Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Pedido.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Pedido.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Models\\Pedido.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Pedido.cs",
+              "RelativeToolTip": "outletnerd\\Models\\Pedido.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T10:59:35.758Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Carrinho.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Carrinho.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Models\\Carrinho.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Carrinho.cs",
+              "RelativeToolTip": "outletnerd\\Models\\Carrinho.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T10:55:07.01Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Produto.cs",
+              "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Produto.cs",
+              "RelativeDocumentMoniker": "outletnerd\\Models\\Produto.cs",
+              "ToolTip": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Models\\Produto.cs",
+              "RelativeToolTip": "outletnerd\\Models\\Produto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-19T10:54:48.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "_Layout.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Views\\Shared\\_Layout.cshtml",
               "RelativeDocumentMoniker": "outletnerd\\Views\\Shared\\_Layout.cshtml",
@@ -42,7 +195,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 11,
               "Title": "site.css",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\wwwroot\\css\\site.css",
               "RelativeDocumentMoniker": "outletnerd\\wwwroot\\css\\site.css",
@@ -54,7 +207,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 12,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "outletnerd\\Views\\_ViewImports.cshtml",
@@ -66,7 +219,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 9,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\3ds\\Desktop\\outletnerd\\outletnerd\\outletnerd\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "outletnerd\\Views\\Home\\Index.cshtml",
