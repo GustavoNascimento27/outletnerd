@@ -2,7 +2,6 @@
 
 }
 
-
 <div class="text-center">
     <header>
 
@@ -14,8 +13,12 @@
             <div class="search-bar">
                 <form method="get" action="@Url.Action("Index", "YourController")">
                     <div class="input-group">
-                        <button type="submit" class="btn-busca">Buscar</button>
-                        <input type="text" name="searchTerm" class="busca" placeholder="   Já tem algo em mente?" />
+                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
+                        
+                        <div class="search-container">
+                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                        </div>
                         
                     </div>
                 </form>
@@ -32,9 +35,9 @@
         <div class="navbar-categorias">
             <div class="navbar-cat">
                 <ul>
-                    <li> <a href="#">decoracoes</a>  </li>
-                    <li><a href="#">brinquedos</a></li>
-                    <li><a href="#">Livros e mangas</a></li>
+                    <li class="nav-item"><a href="#">Decorações</a>  </li>
+                    <li><a href="#">Brinquedos</a></li>
+                    <li><a href="#">Livros e Mangás</a></li>
                     <li><a href="#">Roupas</a></li>
                 </ul>
             </div>
