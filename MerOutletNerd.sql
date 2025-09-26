@@ -1,4 +1,4 @@
-drop database dbMer;
+-- drop database dbMer;
 create database dbMer;
 use dbMer;
 
@@ -21,7 +21,7 @@ create table Funcionario(
 
 -- Fornecedor
 create table Fornecedor(
-  IdFornecedor int primary key auto_increment,
+  IdFornecedor int primary key,
   Nome varchar(60) not null,
   Lote int not null
 );
@@ -32,12 +32,9 @@ create table Produto(
   Nome varchar(80) not null,
   Descricao varchar(120) not null,
   Preco decimal(8,2) not null,
+  ImageUrl varchar(120) not null,
   Quantidade int not null,
-  Categoria varchar(40) not null,
-  IdFornecedor int not null,
-  IdFuncionario int not null,
-  foreign key (IdFornecedor) references Fornecedor(IdFornecedor),
-  foreign key (IdFuncionario) references Funcionario(IdFuncionario)
+  Categoria varchar(40) not null
 );
 
 -- Carrinho
@@ -94,3 +91,5 @@ create table NotaFiscal(
   IdCompra int not null,
   foreign key (IdCompra) references Compra(IdCompra)
 );
+
+insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Pelúcias de Pokémon', '4 Pelúcias de pokémon', 50.90, 'imgProd/pikachu.png', 100, 'Brinquedos');

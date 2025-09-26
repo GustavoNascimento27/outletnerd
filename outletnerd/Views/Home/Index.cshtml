@@ -1,5 +1,6 @@
 ﻿@{
-    
+        ViewData["Title"] = "OutletNerd";
+@model IEnumerable<outletnerd.Models.Produto>
 }
 <div class="text-center">
     <header>
@@ -25,7 +26,7 @@
 
 
             <div class="nav_btn">
-                <a class="navbar-icon1"><img src="~/img/carrinho.png"/></a>
+                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png"/></a>
                 <a class="navbar-icon2"><img src="~/img/usericon.png"/> </a>
             </div>
 
@@ -45,10 +46,37 @@
         <div class="banner-dec">
             <img class="banner" src="~/img/banner.png" alt="Alternate Text"/>
         </div>
+
+<div class="row">
+    @foreach (var produto in Model)
+    {
+        <div class="col-md-4 mb-4">
+            <div class="card h-100">
+                <img src="@produto.ImageUrl" class="card-img-top" alt="@produto.Nome" style="height: 200px; object-fit: cover;">
+                <div class="card-body">
+                    <h5 class="card-title" style="color:darkgreen">@produto.Nome</h5>
+                    <p class="card-text" style="color:darkseagreen">@produto.Descricao</p>
+                    <p class="card-text" style="color:darkgoldenrod"><strong>Preço: R$ @produto.Preco.ToString("F2")</strong></p>
+                    <p class="card-text" style="font-size:20px;"><small class="text-muted">Estoque: @produto.Quantidade.ToString()</small></p>
+
+                    <form asp-controller="Carrinho" asp-action="AdicionarCarrinho" method="post">
+                        <input type="hidden" name="produtoId" value="@produto.IdProduto" />
+                        <div class="form-group mb-2">
+                            <label for="quantidade-@produto.IdProduto">Quantidade:</label>
+                            <input type="number" id="quantidade-@produto.IdProduto" name="quantidade" class="form-control" value="1" min="1" max="@produto.Quantidade" />
+                        </div>
+                        <button type="submit" class="btn btn-primary">Adicionar ao Carrinho</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        }
+
+</div>
     </header>
     <footer class="border-top footer text-muted">
         <div class="container-footer">
-            &copy; 2025 - outletnerd - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - outletnerd - <!--<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>-->
         </div>
     </footer>
 </div>

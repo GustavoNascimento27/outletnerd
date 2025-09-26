@@ -55,7 +55,7 @@ namespace outletnerd.Rep
         public void RemoverItemCarrinho(ISession session, int produtoId)
         {
             var cart = CarrinhoItens(session);
-            var itemRemover = cart.FirstOrDefault(item => item.ProdutoId == produtoId);
+            var itemRemover = cart.FirstOrDefault(item => item.IdCarrinho == produtoId);
             if (itemRemover != null)
             {
                 cart.Remove(itemRemover);
@@ -79,4 +79,4 @@ namespace outletnerd.Rep
         }
     }
 }
-}
+

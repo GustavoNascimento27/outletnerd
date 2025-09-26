@@ -1,12 +1,69 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using outletnerd.Rep;
+using outletnerd.Models;
 
-namespace outletnerd.Controllers
+namespace Toycom.Controllers
 {
     public class CarrinhoController : Controller
     {
-        public IActionResult Index()
+        private readonly CarrinhoRep _carrinhoRep;
+        private readonly ProdutoRep _produtoRep;
+
+        public CarrinhoController(CarrinhoRep carrinhoRep, ProdutoRep produtoRep)
         {
-            return View();
+            _carrinhoRep = carrinhoRep;
+            _produtoRep = produtoRep;
+        }
+        public async Task<IActionResult> Index()
+        {
+            var cartItems = _carrinhoRep.CarrinhoItens(HttpContext.Session);
+            foreach (var item in cartItems)
+            {
+                item.Produto = await _produtoRep.ProdutoPorId(item.IdCarrinho);
+
+                //if (item.Produto != null)
+                //{
+
+                //}
+            }
+            ViewBag.TotalCarrinho = _carrinhoRep.TotalCarrinho(HttpContext.Session);
+            return View(cartItems);
+        }
+        [HttpPost]
+        public async Task<IActionResult> AdicionarCarrinho(int produtoId, int quantidade = 1)
+        {
+            var produto = await _produtoRep.ProdutoPorId(produtoId);
+            if (produto == null)
+            {
+                TempData["Message"] = "Produto não encontrado."; // Use TempData para mensagens
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                _carrinhoRep.AddCarrinho(HttpContext.Session, produto, quantidade);
+                return RedirectToAction("Index", "Carrinho");
+            }
+        }
+
+        [HttpPost]
+        public IActionResult AlterarQuantidadeItem(int produtoId, int novaQuantidade)
+        {
+            _carrinhoRep.AlterarQuantidadeItem(HttpContext.Session, produtoId, novaQuantidade);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult RemoveFromCart(int produtoId)
+        {
+            _carrinhoRep.RemoverItemCarrinho(HttpContext.Session, produtoId);
+            return RedirectToAction("Index");
+        }
+
+        [HttpPost]
+        public IActionResult LimparCarrinho()
+        {
+            _carrinhoRep.LimparCarrinho(HttpContext.Session);
+            return RedirectToAction("Index");
         }
     }
 }
