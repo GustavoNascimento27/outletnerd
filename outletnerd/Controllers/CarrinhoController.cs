@@ -30,7 +30,7 @@ namespace Toycom.Controllers
             return View(cartItems);
         }
         [HttpPost]
-        public async Task<IActionResult> AdicionarCarrinho(int produtoId, int quantidade = 1)
+        public async Task<IActionResult> AddCarrinho(int produtoId, int quantidade = 1)
         {
             var produto = await _produtoRep.ProdutoPorId(produtoId);
             if (produto == null)

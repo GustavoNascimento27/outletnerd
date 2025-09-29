@@ -1,5 +1,73 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
+﻿ 
+
+@model List<outletnerd.Models.Carrinho>
 @{
+    ViewData["Title"] = "Seu Carrinho";
+}
+
+<h1>Seu Carrinho de Compras</h1>
+
+@if (TempData["Message"] != null)
+{
+    <div class="alert alert-info">@TempData["Message"]</div>
+}
+
+@if (Model.Any())
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Produto</th>
+                <th>Preço Unitário</th>
+                <th>Quantidade</th>
+                <th>Total</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Produto.Nome</td>
+                    <td>R$ @item.Preco.ToString("F2")</td>
+                    <td>
+                        <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post" class="d-inline">
+                            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
+                            <input type="number" name="novaQuantidade" value="@item.Quantidade" min="1" style="width: 70px;"
+                                   onchange="this.form.submit()" />
+                        </form>
+                    </td>
+                    <td>R$ @item.Valor.ToString("F2")</td>
+                    <td>
+                        <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
+                            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
+                            <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                        </form>
+                    </td>
+                </tr>
+            }
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="3" class="text-right"><strong>Total do Carrinho:</strong></td>
+                <td><strong style="color:Red">R$ @ViewBag.TotalCarrinho.ToString("F2")</strong></td>
+                <td></td>
+            </tr>
+        </tfoot>
+    </table>
+
+    <div class="text-right">
+        <!--<a asp-controller="Pedido" asp-action="Checkout" class="btn btn-success">Finalizar Compra</a>-->
+        <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" class="d-inline">
+            <button type="submit" onclick="alert('Compra realizada')" class="btn btn-success">Finalizar Compra</button>
+            <button type="submit" class="btn btn-warning">Limpar Carrinho</button>
+            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Continuar Comprando</a>
+        </form>
+    </div>
+}
+
+else
+{
+    <p>Seu carrinho está vazio.</p>
+    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Continuar Comprando</a>
 }

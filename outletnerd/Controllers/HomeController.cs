@@ -1,21 +1,25 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using outletnerd.Models;
+using outletnerd.Rep;
 
 namespace outletnerd.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ProdutoRep _produtoRep;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ProdutoRep produtoRep)
         {
             _logger = logger;
+            _produtoRep = produtoRep;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var produto = await _produtoRep.TodosProdutos();
+            return View(produto);
         }
 
         public IActionResult Privacy()

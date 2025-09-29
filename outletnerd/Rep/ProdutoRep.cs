@@ -14,13 +14,13 @@ namespace outletnerd.Rep
         public async Task<IEnumerable<Produto>>TodosProdutos()
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "Select IdProduto, Nome, Descricao, Preco, ImageUrl, Estoque from Produto";
+            var sql = "Select IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade, Categoria from Produto";
             return await connection.QueryAsync<Produto>(sql);
         }
         public async Task<Produto?> ProdutoPorId(int idProduto)
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "SELECT IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade FROM Produto WHERE IdProduto = @idProduto";
+            var sql = "SELECT IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade, Categoria FROM Produto WHERE IdProduto = @idProduto";
             return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { IdProduto = idProduto });
         }
     }
