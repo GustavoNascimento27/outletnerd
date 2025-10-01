@@ -1,4 +1,6 @@
 using outletnerd.Rep;
+using outletnerd.Rep.Interfaces
+    ;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddSession(options =>
@@ -11,6 +13,8 @@ builder.Services.AddSession(options =>
 builder.Services.AddSingleton<string>(builder.Configuration.GetConnectionString("DefaultConnection")!);
 // Add services to the container.
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<InCliente, ClienteRep>();
 
 builder.Services.AddScoped<ProdutoRep>();
 builder.Services.AddScoped<PedidoRep>();

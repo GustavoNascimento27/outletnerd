@@ -7,16 +7,16 @@ using System.Data;
 namespace outletnerd.Rep
 {
     public class ClienteRep : InCliente
+    {
+        private readonly string _connectionString;
+
+        public ClienteRep(IConfiguration conf)
         {
-            private readonly string _connectionString;
+            _connectionString = conf.GetConnectionString("DefaultConnection");
 
-            public ClienteRep(IConfiguration conf)
-            {
-                _connectionString = conf.GetConnectionString("DefaultConnection");
-
-            }
-            public void CadastrarCliente(Cliente cliente)
-            {
+        }
+        public void CadastrarCliente(Cliente cliente)
+        {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
@@ -30,11 +30,38 @@ namespace outletnerd.Rep
                 comand.ExecuteNonQuery();
                 conexao.Close();
             }
-    }
-     public IEnumerable<Cliente> ObterAluno()
+        }
+        public IEnumerable<Cliente> ObterCliente()
         {
-          
+            List<Cliente> CList = new List<Cliente>();
+            using (var conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+                MySqlCommand command = new MySqlCommand("select * from Cliente;", conexao);
+
+                MySqlDataAdapter da = new MySqlDataAdapter(command);
+                DataTable dt = new DataTable();
+                da.Fill(dt);
+
+                conexao.Close();
+
+                foreach (DataRow dr in dt.Rows)
+                {
+                    CList.Add(
+                        new Cliente
+                        {
+                            IdCliente = Convert.ToInt32(dr["IdCliente"]),
+                            Email = (string)dr["Email"],
+                            Name = (string)dr["Nome"],
+                            Senha = (string)dr["Senha"],
+                            Telefone = (Int32)dr["Telefone"],
+                        }
+                        );
+                }
+                return CList;
+            }
         }
 
-        }
     }
+}
+
