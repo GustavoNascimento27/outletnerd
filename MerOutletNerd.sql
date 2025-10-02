@@ -91,5 +91,6 @@ create table NotaFiscal(
   IdCompra int not null,
   foreign key (IdCompra) references Compra(IdCompra)
 );
+select * from Cliente;
 
 insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Pelúcias de Pokémon', '4 Pelúcias de pokémon', 50.90, 'imgProd/pikachu.png', 100, 'Brinquedos');
