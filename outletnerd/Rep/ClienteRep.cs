@@ -20,10 +20,10 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand comand = new MySqlCommand("insert into Cliente(Email, Nome, Senha, Telefone) values (@Email, @Nome, @Senha, @Telefone)", conexao);
+                MySqlCommand comand = new MySqlCommand("insert into Cliente (Email, Nome, Senha, Telefone) values (@Email, @Nome, @Senha, @Telefone)", conexao);
 
                 comand.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
-                comand.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Name;
+                comand.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
                 comand.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
                 comand.Parameters.Add("@Telefone", MySqlDbType.Int32).Value = cliente.Telefone;
 
@@ -52,7 +52,7 @@ namespace outletnerd.Rep
                         {
                             IdCliente = Convert.ToInt32(dr["IdCliente"]),
                             Email = (string)dr["Email"],
-                            Name = (string)dr["Nome"],
+                            Nome = (string)dr["Nome"],
                             Senha = (string)dr["Senha"],
                             Telefone = (Int32)dr["Telefone"],
                         }
