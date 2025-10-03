@@ -7,7 +7,7 @@ namespace outletnerd.Rep
     public class FuncionarioRep : InFuncionario
     {
         private readonly string _connectionString;
-
+        
         public FuncionarioRep(IConfiguration conf)
         {
             _connectionString = conf.GetConnectionString("DefaultConection");
@@ -26,5 +26,6 @@ namespace outletnerd.Rep
                 conexao.Close();
             }
         }
+
     }
 }
