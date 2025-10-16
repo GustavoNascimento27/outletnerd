@@ -145,15 +145,17 @@ input{
     justify-content:center;
 }
 .row {
+    border: 0.1px solid lightgray; 
     width: 10%;
+    display: grid;
     margin-left: 5%;
-    border: outset;
-    border-bottom-left-radius: 17px;
-    border-bottom-right-radius: 17px;
+    margin-top: 2%;
+    border-radius: 17px;
 }
 .card-img-top{
     width: 180px;
     border-radius:12px;
+    
 }
 .card-title{
     margin-top: 2%;
@@ -164,20 +166,22 @@ input{
     color: black;
 }
 .card-text {
-    margin-left: 7%;
+    text-align: center;
     font-family: Impact;
-    margin-top: -13%;
-    font-weight: lighter;
-    color: red;
+    margin-top: -6%;
+    font-weight: 100;
+    font-size: 140%;
+    color: darkorange;
 }
 .card-textq {
     margin-left:6%;
-    margin-top: -2%;
+    margin-top: 10%;
     font-weight: bold;
-    color: darkcyan;
+    color: dimgray;
 }
 .lblq {
-    margin-top: -10%;
+    color: darkgray;
+    margin-top: -15%;
     font-weight: 500;
     margin-left: 5%;
 }
@@ -191,7 +195,7 @@ input{
 
 }
 .btn-primary {
-    background-color: aquamarine;
+    background-color: lightcoral;
     border: none;
     width:100%;
     height:30px;

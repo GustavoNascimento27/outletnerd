@@ -65,7 +65,7 @@ namespace Toycom.Controllers
             _carrinhoRep.LimparCarrinho(HttpContext.Session);
             return RedirectToAction("Index");
         }
-        [HttpPost]
+        /*[HttpPost]
         public IActionResult RealizarCompra(Cliente cliente)
         {
             if(cliente == null)
@@ -73,6 +73,6 @@ namespace Toycom.Controllers
                 return RedirectToAction("CadastrarC", cliente);
             }
              //return RedirectToAction("FinalizarPedido", pedido)
-        }
+        }*/
     }
 }

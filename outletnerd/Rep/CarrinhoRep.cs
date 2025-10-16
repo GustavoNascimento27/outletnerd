@@ -30,6 +30,7 @@ namespace outletnerd.Rep
                     Quantidade = quantidade,
                     Preco = produto.Preco
                 });
+               
             }
             SalvarCarrinho(session, cart);
         }
