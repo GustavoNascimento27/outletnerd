@@ -147,8 +147,10 @@ input{
 .row {
     border: 0.1px solid lightgray; 
     width: 10%;
-    display: grid;
-    margin-left: 5%;
+    gap:75%;
+    position:absolute;
+    display: inline-flex;
+    margin-left: 20%;
     margin-top: 2%;
     border-radius: 17px;
 }
@@ -169,7 +171,8 @@ input{
     text-align: center;
     font-family: Impact;
     margin-top: -6%;
-    font-weight: 100;
+    font-weight:normal;
+    font-style:normal;
     font-size: 140%;
     color: darkorange;
 }

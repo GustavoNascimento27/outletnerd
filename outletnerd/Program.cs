@@ -15,6 +15,7 @@ builder.Services.AddSingleton<string>(builder.Configuration.GetConnectionString(
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddScoped<InCliente, ClienteRep>();
+builder.Services.AddScoped<InFuncionario, FuncionarioRep>();
 
 builder.Services.AddScoped<ProdutoRep>();
 builder.Services.AddScoped<PedidoRep>();
