@@ -202,3 +202,48 @@ input{
     border-bottom-left-radius: 15px;
     border-bottom-right-radius: 15px;
 }
+/*Carrinho*/
+.cartTitle{
+    text-align:center;
+    font-size:200%;
+    font-family: Impact;
+    font-weight:500;
+}
+.vazio{
+    text-align:center;
+    font-size:110%;
+}
+.btnHome{
+    margin-left:46%;
+    text-decoration:none;
+    color:darkred;
+    background-color: white;
+    border:none;
+}
+.btnHome2 {
+    text-decoration: none;
+    color: darkred;
+    background-color: white;
+}
+.table{
+    margin-top:2%;
+    margin-left:39%;
+}
+.itensTable{
+    width: 4vw;
+    color:white;
+    font-size:105%;
+    background-color:darkred;
+}
+.NomeP {
+    text-align:center;
+    font-size: 75%;
+    background-color: black;
+    color:white;
+}
+.QtdP {
+    border-radius:5px;
+    text-align: center;
+    font-size: 75%;
+    border:none;
+}

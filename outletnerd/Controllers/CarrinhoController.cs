@@ -19,7 +19,7 @@ namespace Toycom.Controllers
             var cartItems = _carrinhoRep.CarrinhoItens(HttpContext.Session);
             foreach (var item in cartItems)
             {
-                item.Produto = await _produtoRep.ProdutoPorId(item.IdCarrinho);
+                item.Produto = await _produtoRep.ProdutoPorId(item.IdProduto);
 
                 //if (item.Produto != null)
                 //{

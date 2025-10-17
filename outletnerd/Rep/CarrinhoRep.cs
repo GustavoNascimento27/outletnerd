@@ -15,7 +15,7 @@ namespace outletnerd.Rep
         public void AddCarrinho(ISession session, Produto produto, int quantidade)
         {
             var cart = CarrinhoItens(session);
-            var existingItem = cart.FirstOrDefault(item => item.IdCarrinho == produto.IdProduto);
+            var existingItem = cart.FirstOrDefault(item => item.IdProduto == produto.IdProduto);
 
             if (existingItem != null)
             {
@@ -25,13 +25,14 @@ namespace outletnerd.Rep
             {
                 cart.Add(new Carrinho
                 {
-                    IdCarrinho = produto.IdProduto,
+                    IdCarrinho = Guid.NewGuid().GetHashCode(),
+                    IdProduto = produto.IdProduto,
 
                     Quantidade = quantidade,
                     Preco = produto.Preco
                 });
-               
             }
+            produto.Quantidade -= quantidade;
             SalvarCarrinho(session, cart);
         }
         public void AlterarQuantidadeItem(ISession session, int produtoId, int novaQuantidade)

@@ -5,7 +5,7 @@
     ViewData["Title"] = "Seu Carrinho";
 }
 
-<h1>Seu Carrinho de Compras</h1>
+<h1 class="cartTitle">Seu Carrinho de Compras</h1>
 
 @if (TempData["Message"] != null)
 {
@@ -17,23 +17,23 @@
     <table class="table">
         <thead>
             <tr>
-                <th>Produto</th>
-                <th>Preço Unitário</th>
-                <th>Quantidade</th>
-                <th>Total</th>
-                <th></th>
+                <th class="itensTable">Produto</th>
+                <th class="itensTable">Preço Unitário</th>
+                <th class="itensTable">Quantidade</th>
+                <th class="itensTable">Total</th>
+                <th class="itensTable"></th>
             </tr>
         </thead>
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    <td>@item.Produto.Nome</td>
-                    <td>R$ @item.Preco.ToString("F2")</td>
+                    <td class="NomeP">@item.Produto.Nome</td>
+                    <td class="NomeP">R$ @item.Preco.ToString("F2")</td>
                     <td>
-                        <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post" class="d-inline">
+                        <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post">
                             <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
-                            <input type="number" name="novaQuantidade" value="@item.Quantidade" min="1" style="width: 70px;"
+                            <input type="number" name="novaQuantidade" class="QtdP" value="@item.Quantidade" min="1" style="width: 70px;"
                                    onchange="this.form.submit()" />
                         </form>
                     </td>
@@ -41,7 +41,7 @@
                     <td>
                         <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
                             <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
-                            <button type="submit" class="btn btn-danger btn-sm">Remover</button>
+                            <button type="submit" class="btn-danger">Remover</button>
                         </form>
                     </td>
                 </tr>
@@ -61,13 +61,13 @@
         <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" class="d-inline">
             <button  asp-controller="Cliente" asp-action="CadastrarC" type="submit" class="btn btn-success">Finalizar Compra</button>
             <button type="submit" class="btn btn-warning">Limpar Carrinho</button>
-            <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Continuar Comprando</a>
+            <a asp-controller="Home" asp-action="Index" class="btnHome2">Continuar Comprando</a>
         </form>
     </div>
 }
 
 else
 {
-    <p>Seu carrinho está vazio.</p>
-    <a asp-controller="Home" asp-action="Index" class="btn btn-primary">Continuar Comprando</a>
+    <p class="vazio">Seu carrinho está vazio...</p>
+    <a asp-controller="Home" asp-action="Index" class="btnHome">Continuar Comprando</a>
 }
