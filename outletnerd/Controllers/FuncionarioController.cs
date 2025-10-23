@@ -31,6 +31,20 @@ namespace outletnerd.Controllers
             {
                 _inFuncionario.CadastrarFuncionario(funcionario);
             }
+            return RedirectToAction("CadastrarP", funcionario);
+        }
+        public IActionResult CadastrarP()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CadastrarP(Produto produto)
+        {
+           
+            if (ModelState.IsValid)
+            {
+                _inFuncionario.CadastrarProduto(produto);
+            }
             return View();
         }
     }

@@ -32,7 +32,7 @@ create table Produto(
   Nome varchar(80) not null,
   Descricao varchar(120) not null,
   Preco decimal(8,2) not null,
-  ImageUrl varchar(120) not null,
+  ImageUrl varchar(300) not null,
   Quantidade int not null,
   Categoria varchar(40) not null
 );
@@ -91,6 +91,7 @@ create table NotaFiscal(
   IdCompra int not null,
   foreign key (IdCompra) references Compra(IdCompra)
 );
+select * from Funcionario;
 select * from Cliente;
 select * from Produto;
 insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Pelúcias de Pokémon', '4 Pelúcias de pokémon', 50.90, 'imgProd/pikachu.png', 100, 'Brinquedos');

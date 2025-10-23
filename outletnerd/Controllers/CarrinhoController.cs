@@ -1,6 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using outletnerd.Rep;
 using outletnerd.Models;
+using Org.BouncyCastle.Tls;
+using Microsoft.DotNet.Scaffolding.Shared.Messaging;
+using Org.BouncyCastle.Asn1.X509;
 
 namespace Toycom.Controllers
 {
@@ -65,14 +68,15 @@ namespace Toycom.Controllers
             _carrinhoRep.LimparCarrinho(HttpContext.Session);
             return RedirectToAction("Index");
         }
-        /*[HttpPost]
+        [HttpPost]
         public IActionResult RealizarCompra(Cliente cliente)
         {
             if(cliente == null)
             {
                 return RedirectToAction("CadastrarC", cliente);
             }
-             //return RedirectToAction("FinalizarPedido", pedido)
-        }*/
+            //return RedirectToAction("FinalizarPedido", pedido)
+            return RedirectToAction("Index");
+        }
     }
 }
