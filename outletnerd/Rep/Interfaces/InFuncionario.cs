@@ -4,6 +4,6 @@ namespace outletnerd.Rep.Interfaces
     public interface InFuncionario
     {
         void CadastrarFuncionario(Funcionario funcionario);
-        void CadastrarProduto(Produto produto);
+        public void CadastrarProduto(Produto produto);
     }
 }

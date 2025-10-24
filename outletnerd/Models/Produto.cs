@@ -11,6 +11,6 @@ namespace outletnerd.Models
         public string ImageUrl { get; set; }
         public int Quantidade { get; set; }
         public string Categoria { get; set; }
-        public Fornecedor Fornecedor { get; set; }
+        //public Fornecedor Fornecedor { get; set; }
     }
 }

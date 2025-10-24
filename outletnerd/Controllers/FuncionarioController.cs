@@ -33,6 +33,7 @@ namespace outletnerd.Controllers
             }
             return RedirectToAction("CadastrarP", funcionario);
         }
+        [HttpGet]
         public IActionResult CadastrarP()
         {
             return View();

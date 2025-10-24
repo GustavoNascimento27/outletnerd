@@ -32,7 +32,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand comd = new MySqlCommand("insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values(@Nome,@Descricao,@Preco,@ImageUrl,@Quantidade,@Categoria);", conexao);
+                MySqlCommand comd = new MySqlCommand("insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade,Categoria) values (@Nome,@Descricao,@Preco,@ImageUrl,@Quantidade,@Categoria);", conexao);
                 comd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = produto.Nome;
                 comd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = produto.Descricao;
                 comd.Parameters.Add("@Preco", MySqlDbType.Decimal).Value = produto.Preco;
