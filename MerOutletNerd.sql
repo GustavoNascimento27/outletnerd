@@ -32,7 +32,7 @@ create table Produto(
   Nome varchar(80) not null,
   Descricao varchar(120) not null,
   Preco decimal(8,2) not null,
-  ImageUrl varchar(300) not null,
+  ImageUrl varchar(1000) not null,
   Quantidade int not null,
   Categoria varchar(40) not null
 );

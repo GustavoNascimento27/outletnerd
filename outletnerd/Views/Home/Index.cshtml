@@ -48,10 +48,10 @@
             <img class="banner" src="~/img/banner.png" alt="Alternate Text"/>
         </div>
 
-<div class="row">
+<div class="d-grid">
     @foreach (var produto in Model)
     {
-        <div class="col-md-4 mb-4">
+        <div class="col">
             <div class="card h-100">
                         <img src="@Url.Content(@produto.ImageUrl)" class="card-img-top" alt="@produto.Nome" style="height: 200px; object-fit: cover;">
                 <div class="card-body">
