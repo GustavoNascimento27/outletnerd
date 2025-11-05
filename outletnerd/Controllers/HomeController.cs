@@ -22,10 +22,24 @@ namespace outletnerd.Controllers
             return View(produto);
         }
 
-        public IActionResult Privacy()
+        public IActionResult Decoracoes()
         {
             return View();
         }
+        public IActionResult Brinquedos()
+        {
+            return View();
+        }
+        public IActionResult Livros()
+        {
+            return View();
+        }
+        public IActionResult Roupas()
+        {
+            return View();
+        }
+
+
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

@@ -14,39 +14,36 @@
 
 @if (Model.Any())
 {
-    <table class="table">
-        <thead>
-            <tr>
-                <th class="itensTable">Produto</th>
-                <th class="itensTable">Preço Unitário</th>
-                <th class="itensTable">Quantidade</th>
-                <th class="itensTable">Total</th>
-                <th class="itensTable"></th>
-            </tr>
-        </thead>
-        <tbody>
+ 
+
             @foreach (var item in Model)
             {
-                <tr>
-                    <td class="NomeP">@item.Produto.Nome</td>
-                    <td class="NomeP">R$ @item.Preco.ToString("F2")</td>
-                    <td>
+            <div>
+                <img src="@Url.Content(@item.Produto.ImageUrl)" class="ImgP" alt="@item.Produto.Nome">
+                    <h5 class="TituloP">@item.Produto.Nome</h5>
+                    <!--<p class="card-text">@item.Produto.Descricao</p>-->
+
+                    <p class="NomeP"><strong>Preço: R$ @item.Produto.Preco.ToString("F2")</strong></p>
+                    <!--<p class="card-text estoque">Estoque: @item.Produto.Quantidade.ToString()</p>-->
+
                         <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post">
                             <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
                             <input type="number" name="novaQuantidade" class="QtdP" value="@item.Quantidade" min="1" style="width: 70px;"
                                    onchange="this.form.submit()" />
                         </form>
-                    </td>
-                    <td>R$ @item.Valor.ToString("F2")</td>
-                    <td>
-                        <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
-                            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
-                            <button type="submit" class="btn-danger">Remover</button>
-                        </form>
-                    </td>
-                </tr>
-            }
-        </tbody>
+        <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
+            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
+            <button type="submit" class="btn-danger">Remover</button>
+        </form>
+        </div>
+    }
+                     
+ 
+                        
+
+ 
+            
+
         <tfoot>
             <tr>
                 <td colspan="3" class="text-right"><strong>Total do Carrinho:</strong></td>
@@ -54,7 +51,6 @@
                 <td></td>
             </tr>
         </tfoot>
-    </table>
 
     <div class="text-right">
         <!--<a asp-controller="Pedido" asp-action="Checkout" class="btn btn-success">Finalizar Compra</a>-->

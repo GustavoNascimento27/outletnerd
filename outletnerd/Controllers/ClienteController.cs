@@ -31,5 +31,9 @@ namespace outletnerd.Controllers
             }
             return View();
         }
+        public IActionResult Compra()
+        {
+            return View();
+        }
     }
 }

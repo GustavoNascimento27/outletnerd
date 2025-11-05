@@ -184,7 +184,17 @@ input{
 .control-label{
     margin-left: 0.5rem;
 }
-.form-control{
+.control-labelC {
+    margin-left: 0.5rem;
+}
+.form-controlC {
+    border-radius: 15px;
+    width: 12rem;
+    border: 1px solid gray;
+    margin-top: 2rem;
+    margin-left: 1.2rem;
+}
+.form-control {
     border-radius: 10px;
     width: 12rem;
     border: 1px solid gray;
@@ -229,7 +239,7 @@ input{
 .colP {
     margin-top:0%;
     margin-left: 45%;
-    width: 20rem;
+    width: 22rem;
     margin-bottom: 5%;
     border: 0.1px solid lightgray;
     border-radius: 15px;
@@ -237,6 +247,13 @@ input{
 
 .form-group P {
     height: 40%;
+}
+.form-controlP {
+    border-radius: 10px;
+    width: 12rem;
+    border: 1px solid gray;
+    margin-top: 2rem;
+    margin-left: 1.8vw;
 }
 
 .card {
@@ -341,14 +358,38 @@ input{
     font-size:105%;
     background-color:darkred;
 }
+.ImgP {
+    object-fit: cover;
+    border-radius: 15px 15px 0 0;
+    width: 15%;
+}
+.TituloP {
+    margin-top:-8%;
+    margin-left:18%;
+    font-size: 200%;
+    color: black;
+}
 .NomeP {
-    text-align:center;
-    font-size: 75%;
-    color:black;
+    margin-top: -2.5%;
+    margin-left: 17.2%;
+    font-size: 120%;
+    color: black;
 }
 .QtdP {
+    background-color:salmon;
     border-radius:5px;
-    text-align: center;
+    margin-left: 19%;
+    height:20%;
     font-size: 75%;
     border:none;
+}
+.btn-danger{
+    margin-top:-8%;
+    margin-left:26%;
+}
+.card-footer {
+    display: flex;
+    width: 100%;
+    color: white;
+    background-color: black;
 }
