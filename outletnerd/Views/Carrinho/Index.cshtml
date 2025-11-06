@@ -5,7 +5,7 @@
     ViewData["Title"] = "Seu Carrinho";
 }
 
-<h1 class="cartTitle">Seu Carrinho de Compras</h1>
+<h1 class="cartTitle1">Seu Carrinho</h1>
 
 @if (TempData["Message"] != null)
 {
@@ -18,7 +18,7 @@
 
             @foreach (var item in Model)
             {
-            <div>
+            <div class="produtoitem">
                 <img src="@Url.Content(@item.Produto.ImageUrl)" class="ImgP" alt="@item.Produto.Nome">
                     <h5 class="TituloP">@item.Produto.Nome</h5>
                     <!--<p class="card-text">@item.Produto.Descricao</p>-->
@@ -45,6 +45,7 @@
             
 
         <tfoot>
+        <h1 class="cartTitle2">Resumo da compra:</h1>
             <tr>
                 <td colspan="3" class="text-right"><strong>Total do Carrinho:</strong></td>
                 <td><strong style="color:Red">R$ @ViewBag.TotalCarrinho.ToString("F2")</strong></td>

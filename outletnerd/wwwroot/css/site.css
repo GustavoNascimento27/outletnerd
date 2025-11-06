@@ -146,7 +146,7 @@ input{
 }
 .d-grid {
     width: 90%;
-    gap: 2rem;
+    gap: 3rem;
     display: grid;
     margin: 3rem auto;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -325,11 +325,18 @@ input{
         background-color: #e35d5b;
     }
 /*Carrinho*/
-.cartTitle{
-    text-align:center;
+.cartTitle1{
+    margin-top:3%;
+    margin-left:5%;
     font-size:200%;
     font-family: Impact;
     font-weight:500;
+}
+.cartTitle2 {
+    margin-left: 65%;
+    font-size: 200%;
+    font-family: Impact;
+    font-weight: 500;
 }
 .vazio{
     text-align:center;
@@ -358,6 +365,9 @@ input{
     font-size:105%;
     background-color:darkred;
 }
+.produtoitem{
+    margin-left:2%;
+}
 .ImgP {
     object-fit: cover;
     border-radius: 15px 15px 0 0;
@@ -370,8 +380,8 @@ input{
     color: black;
 }
 .NomeP {
-    margin-top: -2.5%;
-    margin-left: 17.2%;
+    margin-top: -2.8%;
+    margin-left: 18.1%;
     font-size: 120%;
     color: black;
 }
@@ -384,7 +394,7 @@ input{
     border:none;
 }
 .btn-danger{
-    margin-top:-8%;
+    margin-top:-25%;
     margin-left:26%;
 }
 .card-footer {
