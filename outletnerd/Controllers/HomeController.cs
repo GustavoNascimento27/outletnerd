@@ -22,21 +22,25 @@ namespace outletnerd.Controllers
             return View(produto);
         }
 
-        public IActionResult Decoracoes()
+        public async Task<IActionResult> Decoracoes()
         {
-            return View();
+            var Dec = await _produtoRep.Decoracoes();
+            return View(Dec);
         }
-        public IActionResult Brinquedos()
+        public async Task<IActionResult> Brinquedos()
         {
-            return View();
+            var Bri = await _produtoRep.Brinquedos();
+            return View(Bri);
         }
-        public IActionResult Livros()
+        public async Task<IActionResult> Livros()
         {
-            return View();
+            var Liv = await _produtoRep.Livros();
+            return View(Liv);
         }
-        public IActionResult Roupas()
+        public async Task<IActionResult> Roupas()
         {
-            return View();
+            var Rou = await _produtoRep.Roupas();
+            return View(Rou);
         }
 
 

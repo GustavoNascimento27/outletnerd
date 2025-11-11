@@ -94,4 +94,23 @@ create table NotaFiscal(
 select * from Funcionario;
 select * from Cliente;
 select * from Produto;
+DELIMITER $$
+
+CREATE PROCEDURE GetProdutosCompra()
+BEGIN
+    SELECT DISTINCT 
+        p.IdProduto,
+        p.Nome,
+        p.Descricao,
+        p.Preco,
+        p.ImageUrl,
+        p.Quantidade,
+        p.Categoria
+    FROM Produto p
+    INNER JOIN Produto ip ON p.IdProduto = ip.IdProduto
+    INNER JOIN Carrinho c ON ip.IdCarrinho = c.IdCarrinho
+    INNER JOIN Compra comp ON comp.IdPedido = ped.IdPedido;
+END$$
+
+DELIMITER ;
 insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Pelúcias de Pokémon', '4 Pelúcias de pokémon', 50.90, 'imgProd/pikachu.png', 100, 'Brinquedos');

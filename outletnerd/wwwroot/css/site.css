@@ -133,6 +133,12 @@ input{
         font-size: 35px;
         font-family: Impact;
     }
+        .navbar-cat ul li a:hover {
+            font-size: 40px;
+            color: darkred;
+            transition:ease-in;
+            transition-delay:0.2s;
+        }
         .navbar-cat ul li a {
             color: white;
             text-decoration: none;
@@ -146,7 +152,7 @@ input{
 }
 .d-grid {
     width: 90%;
-    gap: 3rem;
+    gap: 8rem;
     display: grid;
     margin: 3rem auto;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
@@ -175,8 +181,9 @@ input{
     display: flex;
 }
 .colC {
-    margin-left:30%;
-    width: 20rem;
+    margin-left:50rem;
+    width: 35rem;
+    height:37rem;
     margin-top: 2%;
     border: 0.1px solid lightgray;
     border-radius: 15px;
@@ -185,13 +192,14 @@ input{
     margin-left: 0.5rem;
 }
 .control-labelC {
-    margin-left: 0.5rem;
+    margin-left: 1rem;
 }
 .form-controlC {
-    border-radius: 15px;
-    width: 12rem;
+    border-radius: 10px;
+    width: 20rem;
     border: 1px solid gray;
     margin-top: 2rem;
+    margin-bottom: 5rem;
     margin-left: 1.2rem;
 }
 .form-control {
@@ -214,15 +222,28 @@ input{
 }
 
 .colF {
-    margin-left: 30%;
-    width: 20rem;
-    margin-bottom: 5%;
+    margin-left: 50rem;
+    width: 35rem;
+    height: 31rem;
+    margin-top: 2%;
     border: 0.1px solid lightgray;
     border-radius: 15px;
 }
 
 .form-group F{
 
+}
+.control-labelF {
+    margin-left: 1rem;
+}
+
+.form-controlF {
+    border-radius: 10px;
+    width: 20rem;
+    border: 1px solid gray;
+    margin-top: 2rem;
+    margin-bottom: 6rem;
+    margin-left: 1.2rem;
 }
 .d-grid P{
     width: 120%;
@@ -261,8 +282,8 @@ input{
     overflow: hidden; 
 }
     .card p {
-        margin: -1.5rem 4rem 5rem;
-        font-size: 14px;
+        margin: -2rem 4.6rem 5rem;
+        font-size: 20px;
         text-align: center;
 
     }
@@ -287,20 +308,20 @@ input{
     margin-top: 0.5rem;
 }
 
-.card-text {
-    margin-bottom:5rem;
+.card-textpreco{
+    margin-bottom: 5rem;
     font-family: Impact;
     font-size: 28px;
     color: darkred;
     text-align:center;
-    font-weight:normal;
+    font-weight: normal;
 }
 
 .lblq 
 {
     color: darkgray;
     font-weight: 500;
-    margin-right: 5px;
+    margin-right: 8px;
     margin-top: 5rem;
 }
 .form-controltd{
@@ -310,7 +331,7 @@ input{
     width:1.5rem;
 }
 .btn-primary {
-    background-color: lightcoral;
+    background-color:black;
     border: none;
     width: 100%;
     height: 35px;
@@ -320,24 +341,38 @@ input{
     cursor: pointer;
     margin-top:2rem;
 }
+.btn-comprar {
+    background-color: green;
+    border: none;
+    width: 100%;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
 
-    .btn-primary:hover {
-        background-color: #e35d5b;
-    }
+.btn-primary:hover {
+    background-color: #e35d5b;
+    
+}
 /*Carrinho*/
 .cartTitle1{
     margin-top:3%;
-    margin-left:5%;
-    font-size:200%;
+    text-align: center;
+    font-size:400%;
     font-family: Impact;
     font-weight:500;
 }
 .cartTitle2 {
-    margin-left: 65%;
-    font-size: 200%;
+    margin-top:-11rem;
+    margin-left: 75%;
+    font-size: 300%;
     font-family: Impact;
     font-weight: 500;
 }
+
 .vazio{
     text-align:center;
     font-size:110%;
@@ -402,4 +437,17 @@ input{
     width: 100%;
     color: white;
     background-color: black;
+}
+.resumo{
+    margin-left:82rem;
+    display:flex;
+}
+.formcrt {
+    margin-top: 8rem;
+}
+.text-right {
+    font-size:200%;
+}
+.btn-succes{
+    
 }

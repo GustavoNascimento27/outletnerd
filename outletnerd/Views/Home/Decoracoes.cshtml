@@ -1,5 +1,84 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
+﻿@{
+    ViewData["Title"] = "OutletNerd";
+    @model IEnumerable<outletnerd.Models.Produto>
+
 }
+
+<div class="text-center">
+    <header>
+
+        <nav class="navbar-murph">
+
+            <div class="logo">
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
+            </div>
+            <div class="search-bar">
+                <form method="get" action="@Url.Action("Index", "YourController")">
+                    <div class="input-group">
+                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
+
+                        <div class="asearch-container">
+                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="nav_btn">
+                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+                <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+            </div>
+
+        </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <ul>
+                    <li class="itemMenu"><a asp-action="Decoracoes" asp-controller="Home">Decorações</a></li>
+                    <li class="itemMenu"><a asp-action="Brinquedos" asp-controller="Home">Brinquedos</a></li>
+                    <li class="itemMenu"><a asp-action="Livros" asp-controller="Home">Livros e Mangás</a></li>
+                    <li class="itemMenu"><a asp-action="Roupas" asp-controller="Home">Roupas</a></li>
+                </ul>
+            </div>
+
+        </div>
+        <div class="banner-dec">
+            <img class="banner" src="~/img/banner.png" alt="Alternate Text" />
+        </div>
+
+        <div class="d-grid">
+            @foreach (var produto in Model)
+            {
+                <div class="col">
+                    <div class="card">
+                        <img src="@Url.Content(@produto.ImageUrl)" class="card-img-top" alt="@produto.Nome" style="height: 200px; object-fit: cover;">
+                        <div class="card-body">
+                            <h5 class="card-title">@produto.Nome</h5>
+                            <!--<p class="card-text">@produto.Descricao</p>-->
+
+                            <p class="card-text preco"><strong>Preço: R$ @produto.Preco.ToString("F2")</strong></p>
+                            <!--<p class="card-text estoque">Estoque: @produto.Quantidade.ToString()</p>-->
+                            <form asp-controller="Carrinho" asp-action="AddCarrinho" method="post">
+                                <input type="hidden" name="produtoId" value="@produto.IdProduto" />
+
+                                <label class="lblq" for="quantidade-@produto.IdProduto">Quantidade:</label>
+                                <input type="number" id="quantidade-@produto.IdProduto" name="quantidade" class="form-controltd" value="1" min="1" max="@produto.Quantidade" />
+
+                                <button type="submit" class="btn-primary">Adicionar ao Carrinho</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </header>
+    <footer class="card-footer">
+        <div class="container-footer">
+            &copy; Outletnerd - Todos os Direitos Reservados 2025 <!--<a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>-->
+        </div>
+    </footer>
+</div>

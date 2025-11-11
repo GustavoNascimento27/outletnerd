@@ -11,7 +11,7 @@
 {
     <div class="alert alert-info">@TempData["Message"]</div>
 }
-
+ 
 @if (Model.Any())
 {
  
@@ -35,27 +35,29 @@
             <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
             <button type="submit" class="btn-danger">Remover</button>
         </form>
+            <button type="submit" class="btn-compra">Comprar</button>
         </div>
     }
-                     
- 
-                        
 
- 
+
+
+
+
+
+
+
+        <h1 class="cartTitle2">Resumo da compra:</h1>
             
 
-        <tfoot>
-        <h1 class="cartTitle2">Resumo da compra:</h1>
+
+    <div class="resumo">
+        <!--<a asp-controller="Pedido" asp-action="Checkout" class="btn btn-success">Finalizar Compra</a>-->
+        <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" class="formcrt">
             <tr>
                 <td colspan="3" class="text-right"><strong>Total do Carrinho:</strong></td>
                 <td><strong style="color:Red">R$ @ViewBag.TotalCarrinho.ToString("F2")</strong></td>
                 <td></td>
             </tr>
-        </tfoot>
-
-    <div class="text-right">
-        <!--<a asp-controller="Pedido" asp-action="Checkout" class="btn btn-success">Finalizar Compra</a>-->
-        <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" class="d-inline">
             <button  asp-controller="Cliente" asp-action="CadastrarC" type="submit" class="btn-success">Finalizar Compra</button>
             <button type="submit" class="btn btn-warning">Limpar Carrinho</button>
             <a asp-controller="Home" asp-action="Index" class="btnHome2">Continuar Comprando</a>
