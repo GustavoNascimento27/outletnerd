@@ -409,12 +409,15 @@ input{
     width: 15%;
 }
 .TituloP {
+    font-family: Impact;
     margin-top:-8%;
     margin-left:18%;
     font-size: 200%;
+    font-weight:100;
     color: black;
 }
 .NomeP {
+    color:darkred;
     margin-top: -2.8%;
     margin-left: 18.1%;
     font-size: 120%;
@@ -424,13 +427,16 @@ input{
     background-color:salmon;
     border-radius:5px;
     margin-left: 19%;
-    height:20%;
+    height:40%;
+
     font-size: 75%;
     border:none;
 }
 .btn-danger{
-    margin-top:-25%;
-    margin-left:26%;
+    display:flex;
+    margin-top:-1rem;
+    margin-left:25%;
+    border:none;
 }
 .card-footer {
     display: flex;
@@ -449,5 +455,6 @@ input{
     font-size:200%;
 }
 .btn-succes{
-    
+    display:flex;
+    margin-left:60rem;
 }
