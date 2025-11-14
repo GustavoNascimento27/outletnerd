@@ -25,11 +25,16 @@ namespace outletnerd.Controllers
         [HttpPost]
         public IActionResult CadastrarC(Cliente cliente)
         {
-            if (ModelState.IsValid)
+            var clienteId = cliente.IdCliente;
+            if (_inCliente.ObterCliente(clienteId) == null)
             {
                 _inCliente.CadastrarCliente(cliente);
             }
-            return View();
+            else
+            {
+                //RedirectToAction()
+            }
+                return View();
         }
         public IActionResult Compra()
         {
