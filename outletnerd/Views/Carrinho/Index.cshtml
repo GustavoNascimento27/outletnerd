@@ -1,72 +1,110 @@
-﻿ 
-
-@model List<outletnerd.Models.Carrinho>
+﻿@model List<outletnerd.Models.Carrinho>
 @{
     ViewData["Title"] = "Seu Carrinho";
+    var total = ViewBag.TotalCarrinho as decimal? ?? 0m;
+    var descontoPix = total * 0.10m; // 10% de desconto no Pix
+    var totalPix = total - descontoPix;
 }
 
-<h1 class="cartTitle1">Seu Carrinho</h1>
+<h1 style="margin:40px 0 20px 40px; font-size:2.5rem;">Meu Carrinho</h1>
 
-@if (TempData["Message"] != null)
-{
-    <div class="alert alert-info">@TempData["Message"]</div>
-}
- 
-@if (Model.Any())
-{
- 
+<div style="display:flex; gap:40px; flex-wrap:wrap; max-width:1400px; margin:0 auto; padding:20px;">
 
+    <!-- ================= ESQUERDA: PRODUTOS ================= -->
+    <div style="flex:2; min-width:300px;">
+
+        @if (Model.Any())
+        {
             @foreach (var item in Model)
             {
-            <div class="produtoitem">
-                <img src="@Url.Content(@item.Produto.ImageUrl)" class="ImgP" alt="@item.Produto.Nome">
-                    <h5 class="TituloP">@item.Produto.Nome</h5>
-                    <!--<p class="card-text">@item.Produto.Descricao</p>-->
+                <div class="produtoitem" style="display:flex; background:white; border-radius:15px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
+                    <img src="@Url.Content(item.Produto.ImageUrl)" class="ImgP" alt="@item.Produto.Nome"
+                         style="width:160px; height:160px; object-fit:cover; border-radius:15px; margin:15px;">
 
-                    <p class="NomeP"><strong>Preço: R$ @item.Produto.Preco.ToString("F2")</strong></p>
-                    <!--<p class="card-text estoque">Estoque: @item.Produto.Quantidade.ToString()</p>-->
+                    <div style="padding:20px; flex:1;">
+                        <h5 class="TituloP">@item.Produto.Nome</h5>
+                        <p class="NomeP"><strong>R$ @item.Produto.Preco.ToString("F2")</strong></p>
 
-                        <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post">
-                            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
-                            <input type="number" name="novaQuantidade" class="QtdP" value="@item.Quantidade" min="1" style="width: 70px;"
-                                   onchange="this.form.submit()" />
-                        </form>
-        <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
-            <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
-            <button type="submit" class="btn-danger">Remover</button>
-        </form>
-            <button asp-action="" asp-controller="" type="submit" class="btn-compra">Comprar</button>
+                        <div style="margin-top:20px; display:flex; align-items:center; gap:15px;">
+                            <form asp-controller="Carrinho" asp-action="AlterarQuantidadeItem" method="post">
+                                <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
+                                <input type="number" name="novaQuantidade" class="QtdP" value="@item.Quantidade" min="1"
+                                       style="width:80px; padding:8px; border-radius:8px; border:1px solid #ccc;"
+                                       onchange="this.form.submit()" />
+                            </form>
+
+                            <form asp-controller="Carrinho" asp-action="RemoveFromCart" method="post" class="d-inline">
+                                <input type="hidden" name="produtoId" value="@item.IdCarrinho" />
+                                <button type="submit" class="btn-danger" asp-controller="Carrinho" asp-action="RemoveFromCart"
+                                        style="background:#dc3545; color:white; border:none; padding:8px 16px; border-radius:8px;">
+                                    Remover
+                                </button>
+                            </form>
+                            <button asp-action="" asp-controller="" type="submit" class="btn-compra">Comprar</button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
+        else
+        {
+            <p class="vazio" style="font-size:1.8rem; text-align:center; margin:80px 0; color:#999;">
+                Seu carrinho está vazio...
+            </p>
+            <a asp-controller="Home" asp-action="Index" class="btnHome"
+               style="display:block; margin:20px auto; padding:12px 30px; background:#00C4B4; color:white; border-radius:30px; text-align:center; width:250px;">
+                Continuar Comprando
+            </a>
+        }
+    </div>
+
+    <!-- ================= DIREITA: RESUMO DA COMPRA ================= -->
+    @if (Model.Any())
+    {
+        <div style="flex:1; min-width:350px; background:white; padding:30px; border-radius:15px; box-shadow:0 4px 20px rgba(0,0,0,0.1); position:sticky; top:20px; align-self:flex-start;">
+            <h1 style="font-size:1.8rem; margin-bottom:25px;">Resumo da compra</h1>
+
+            <div style="margin-bottom:20px; font-size:1.1rem;">
+                <div style="display:flex; justify-content:space-between; margin:12px 0;">
+                    <span>Subtotal (@Model.Sum(x => x.Quantidade) itens)</span>
+                    <strong>R$ @ViewBag.TotalCarrinho.ToString("F2")</strong>
+                </div>
+            </div>
+
+            <div style="display:flex; margin:25px 0;">
+                <input type="text" placeholder="Cupom de Desconto" style="flex:1; padding:12px; border:1px solid #ccc; border-radius:8px 0 0 8px;" />
+                <button type="button" style="background:#00C4B4; color:white; border:none; padding:0 20px; border-radius:0 8px 8px 0; cursor:pointer;">
+                    Adicionar
+                </button>
+            </div>
+
+            <div style="background:#f0f8f7; padding:18px; border-radius:12px; text-align:center; margin:25px 0;">
+                <strong style="font-size:1.4rem; color:#00C4B4;">R$ @totalPix.ToString("F2") no Pix</strong><br>
+                <small>ou R$ @total.ToString("F2") em até 6x de R$ @(Math.Round(total / 6, 2)) sem juros</small>
+            </div>
+
+            <div style="border-top:2px solid #eee; padding-top:20px; display:flex; justify-content:space-between; font-size:1.5rem;">
+                <strong>Total</strong>
+                <strong style="color:#00C4B4;">R$ @total.ToString("F2")</strong>
+            </div>
+
+            <div style="margin-top:30px;">
+                <a asp-controller="Pedido" asp-action="Checkout"
+                   style="display:block; background:#00C4B4; color:white; text-align:center; padding:16px; border-radius:12px; font-size:1.3rem; text-decoration:none;">
+                    Finalizar Compra
+                </a>
+
+                <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" style="margin-top:15px;">
+                    <button type="submit" style="width:100%; padding:12px; background:#ffc107; color:#333; border:none; border-radius:10px; cursor:pointer;">
+                        Limpar Carrinho
+                    </button>
+                </form>
+
+                <a asp-controller="Home" asp-action="Index"
+                   style="display:block; text-align:center; margin-top:15px; color:#666;">
+                    Continuar Comprando
+                </a>
+            </div>
         </div>
     }
-
-
-
-
-
-
-
-
-        <h1 class="cartTitle2">Resumo da compra:</h1>
-            
-
-
-    <div class="resumo">
-        <!--<a asp-controller="Pedido" asp-action="Checkout" class="btn btn-success">Finalizar Compra</a>-->
-        <form asp-controller="Carrinho" asp-action="LimparCarrinho" method="post" class="formcrt">
-            <tr>
-                <td colspan="3" class="text-right"><strong>Total do Carrinho:</strong></td>
-                <td><strong style="color:Red">R$ @ViewBag.TotalCarrinho.ToString("F2")</strong></td>
-                <td></td>
-            </tr>
-            <button  asp-controller="Cliente" asp-action="CadastrarC" type="submit" class="btn-success">Finalizar Compra</button>
-            <button type="submit" class="btn btn-warning">Limpar Carrinho</button>
-            <a asp-controller="Home" asp-action="Index" class="btnHome2">Continuar Comprando</a>
-        </form>
-    </div>
-}
-
-else
-{
-    <p class="vazio">Seu carrinho está vazio...</p>
-    <a asp-controller="Home" asp-action="Index" class="btnHome">Continuar Comprando</a>
-}
+</div>

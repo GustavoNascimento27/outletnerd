@@ -7,6 +7,7 @@ namespace outletnerd.Rep.Interfaces
         public IEnumerable<Cliente> ObterCliente();
         ClienteRep Login(string Email, string Senha);
         public Cliente ObterCliente(int Id);
+        public Cliente BuscaEmailCliente(string email);
 
     }
 }

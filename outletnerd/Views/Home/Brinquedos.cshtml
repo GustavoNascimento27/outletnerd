@@ -10,7 +10,7 @@
         <nav class="navbar-murph">
 
             <div class="logo">
-                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="img/outlet.png"</img></a>
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
             </div>
             <div class="search-bar">
                 <form method="get" action="@Url.Action("Index", "YourController")">
@@ -69,6 +69,7 @@
 
                                 <button type="submit" class="btn-primary">Adicionar ao Carrinho</button>
                             </form>
+                            <button type="submit" class="btn-comprar">Comprar</button>
                         </div>
                     </div>
                 </div>

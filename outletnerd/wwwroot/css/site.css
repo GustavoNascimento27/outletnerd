@@ -169,7 +169,7 @@ input{
     {
         transform: translateY(-8px);
     }
-.d-grid C{
+.d-gridC {
     width: 120%;
     gap: 15%;
     position: absolute;
@@ -178,29 +178,57 @@ input{
     margin-left: 50%;
     margin-top: 5%;
     border-radius: 15px;
-    display: flex;
+}
+.CdC{
+    text-align:center;
 }
 .colC {
-    margin-left:50rem;
+    margin-left: 4rem;
     width: 35rem;
-    height:37rem;
-    margin-top: 2%;
+    height: 37rem;
+    margin-top: 0%;
     border: 0.1px solid lightgray;
     border-radius: 15px;
+    background: white;
+    padding-top: 40px;
 }
-.control-label{
-    margin-left: 0.5rem;
-}
-.control-labelC {
-    margin-left: 1rem;
-}
+
 .form-controlC {
-    border-radius: 10px;
-    width: 20rem;
-    border: 1px solid gray;
-    margin-top: 2rem;
-    margin-bottom: 5rem;
-    margin-left: 1.2rem;
+    border-radius: 30px !important;
+    width: 22rem !important;
+    height: 3.2rem;
+    border: 1px solid #ccc !important;
+    margin-top: 2.5rem !important;
+    margin-bottom: 0 !important;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    padding-left: 20px;
+    font-size: 16px;
+}
+
+.btn-login {
+    background: #00C4B4 !important;
+    color: white !important;
+    width: 22rem;
+    height: 3.5rem;
+    border-radius: 30px !important;
+    font-size: 18px;
+    margin-top: 3rem !important;
+    border: none;
+    cursor: pointer;
+}
+.btn-loginF {
+    background: #00C4B4 !important;
+    color: white !important;
+    width: 22rem;
+    height: 3.5rem;
+    border-radius: 30px !important;
+    font-size: 18px;
+    margin-top: 3rem !important;
+    border: none;
+    cursor: pointer;
+    margin-left:6rem;
 }
 .form-control {
     border-radius: 10px;
@@ -357,7 +385,6 @@ input{
     background-color: #e35d5b;
     
 }
-/*Carrinho*/
 .cartTitle1{
     margin-top:3%;
     text-align: center;
@@ -366,8 +393,7 @@ input{
     font-weight:500;
 }
 .cartTitle2 {
-    margin-top:-11rem;
-    margin-left: 75%;
+text-align:center;
     font-size: 300%;
     font-family: Impact;
     font-weight: 500;
@@ -400,61 +426,180 @@ input{
     font-size:105%;
     background-color:darkred;
 }
-.produtoitem{
-    margin-left:2%;
+.container-carrinho {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 20px;
 }
-.ImgP {
-    object-fit: cover;
-    border-radius: 15px 15px 0 0;
-    width: 15%;
-}
-.TituloP {
-    font-family: Impact;
-    margin-top:-8%;
-    margin-left:18%;
-    font-size: 200%;
-    font-weight:100;
-    color: black;
-}
-.NomeP {
-    color:darkred;
-    margin-top: -2.8%;
-    margin-left: 18.1%;
-    font-size: 120%;
-    color: black;
-}
-.QtdP {
-    background-color:salmon;
-    border-radius:5px;
-    margin-left: 19%;
-    height:40%;
 
-    font-size: 75%;
-    border:none;
-}
-.btn-danger{
-    display:flex;
-    margin-top:-1rem;
-    margin-left:25%;
-    border:none;
-}
-.card-footer {
+.carrinho-content {
     display: flex;
-    width: 100%;
+    gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.produtos-carrinho {
+    flex: 2;
+    min-width: 300px;
+}
+
+.cart-title {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.produto-item {
+    display: flex;
+    background: white;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    padding: 15px;
+}
+
+.produto-img {
+    width: 140px;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 12px;
+}
+
+.produto-info {
+    margin-left: 20px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+    .produto-info h3 {
+        margin: 0;
+        font-size: 1.4rem;
+    }
+
+.preco {
+    font-size: 1.5rem;
+    color: #00C4B4;
+    font-weight: bold;
+}
+
+.quantidade input {
+    width: 70px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.btn-remover {
+    background: #dc3545;
     color: white;
-    background-color: black;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
 }
-.resumo{
-    margin-left:82rem;
-    display:flex;
+
+
+.resumo-compra {
+    flex: 1;
+    min-width: 350px;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 20px;
+    align-self: flex-start;
 }
-.formcrt {
-    margin-top: 8rem;
+
+    .resumo-compra h2 {
+        margin-top: 0;
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+
+.linha-resumo {
+    display: flex;
+    justify-content: space-between;
+    margin: 15px 0;
+    font-size: 1.1rem;
 }
-.text-right {
-    font-size:200%;
+
+.cupom {
+    display: flex;
+    margin: 20px 0;
 }
-.btn-succes{
-    display:flex;
-    margin-left:60rem;
+
+    .cupom input {
+        flex: 1;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 8px 0 0 8px;
+    }
+
+    .cupom button {
+        background: #00C4B4;
+        color: white;
+        border: none;
+        padding: 0 20px;
+        border-radius: 0 8px 8px 0;
+        cursor: pointer;
+    }
+
+.pix-desconto {
+    background: #f0f8f7;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    margin: 20px 0;
+}
+
+.total-final {
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.4rem;
+    margin: 25px 0;
+    padding-top: 20px;
+    border-top: 2px solid #eee;
+}
+
+.btn-finalizar {
+    display: block;
+    background: #00C4B4;
+    color: white;
+    text-align: center;
+    padding: 16px;
+    border-radius: 12px;
+    font-size: 1.3rem;
+    text-decoration: none;
+    margin-bottom: 15px;
+}
+
+.btn-limpar {
+    background: #ffc107;
+    color: #333;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn-continuar-pequeno {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.carrinho-vazio {
+    font-size: 1.5rem;
+    color: #999;
+    text-align: center;
+    margin: 50px 0;
 }

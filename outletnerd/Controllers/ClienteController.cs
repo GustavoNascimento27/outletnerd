@@ -30,11 +30,46 @@ namespace outletnerd.Controllers
             {
                 _inCliente.CadastrarCliente(cliente);
             }
+                return View();
+        }
+        [HttpGet]
+        public IActionResult Login()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult Login(Cliente cliente)
+        {
+            if (!ModelState.IsValid)
+            {
+                return View(cliente);
+            }
+
+            // 1. Busca o cliente pelo e-mail
+            var clienteExistente = _inCliente.BuscaEmailCliente(cliente.Email);
+
+            // 2. Verifica se existe
+            if (clienteExistente == null)
+            {
+                ModelState.AddModelError("", "E-mail ou senha incorretos.");
+                return View(cliente);
+            }
+
+            var clienteLogado = _inCliente.Login(cliente.Email, cliente.Senha);
+
+            if (clienteLogado != null)
+            {
+                HttpContext.Session.SetInt32("ClienteId", cliente.IdCliente);
+                HttpContext.Session.SetString("ClienteEmail", cliente.Email);
+                HttpContext.Session.SetString("ClienteNome", cliente.Nome ?? "Cliente");
+
+                return RedirectToAction("Compra", "Cliente");
+            }
             else
             {
-                //RedirectToAction()
+                ModelState.AddModelError("", "E-mail ou senha incorretos.");
+                return View(cliente);
             }
-                return View();
         }
         public IActionResult Compra()
         {

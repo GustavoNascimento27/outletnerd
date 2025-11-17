@@ -8,6 +8,7 @@ using X.PagedList.Mvc;
 using X.PagedList.Extensions;
 using static Org.BouncyCastle.Math.EC.ECCurve;
 using static outletnerd.Models.Constantes.Cliente;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace outletnerd.Rep
 {
@@ -147,7 +148,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Cliente WHERE Id=@Id", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from Cliente WHERE IdCliente=@Id", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
@@ -254,17 +255,40 @@ namespace outletnerd.Rep
         }
 
 
-        ClienteRep InCliente.Login(string Email, string Senha)
+        public Cliente Login(string Email, string Senha)
         {
-            throw new NotImplementedException();
-        }
+            using (var conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+                MySqlCommand cmd = new MySqlCommand("select Email from Cliente WHERE Email=@Email and Senha=@Senha", conexao);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Senha", Senha);
 
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Cliente cliente = new Cliente();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
+                {
+                    cliente.Email = (string)(dr["Email"]);
+                    cliente.Senha = (string)(dr["Senha"]);
+
+                }
+                return cliente;
+            }
+        }
         public Cliente BuscaCPFCliente(string CPF)
         {
             throw new NotImplementedException();
         }
 
         public IEnumerable<Cliente> ObterCliente()
+        {
+            throw new NotImplementedException();
+        }
+
+        ClienteRep InCliente.Login(string Email, string Senha)
         {
             throw new NotImplementedException();
         }
