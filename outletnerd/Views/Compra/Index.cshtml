@@ -1,7 +1,4 @@
-﻿
-@{
-    @model outletnerd.Models.Produto;
-}
+﻿@model outletnerd.Models.Produto
 
 <div class="produto-detalhe-container">
     <div class="produto-card">
@@ -10,42 +7,20 @@
         </div>
 
         <div class="produto-info">
-            <h1 class="produto-titulo">@Model.Nome</h1>
-
-            <div class="produto-preco">
-                <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
-                <span class="desconto">5x de R$ @(Math.Round(@Model.Preco / 5, 2)) sem juros</span>
-            </div>
-
-            <div class="frete-gratis">
-                Frete GRÁTIS apenas para a Grande São Paulo
-            </div>
-
-            <!-- BOTÃO 1: Comprar Agora (adiciona + vai direto pra tela de compra) -->
-            <form asp-controller="Carrinho" asp-action="ComprarAgora" method="post" style="margin:20px 0;">
-                <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-                <input type="hidden" name="quantidade" value="1" />
-                <button type="submit" class="btn-comprar">
-                    Comprar
-                </button>
-            </form>
-
-            <!-- BOTÃO 2: Adicionar ao Carrinho (só adiciona, fica na mesma página) -->
-            <form asp-controller="Carrinho" asp-action="AddToCart" method="post">
-                <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-                <input type="hidden" name="quantidade" value="1" />
-                <button type="submit" class="btn-adicionar-carrinho">
-                    Adicionar ao Carrinho
-                </button>
-            </form>
+            <h1>@Model.Nome</h1>
+            <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
         </div>
-    </div>
 
-    <!-- Descrição -->
-    <div class="secoes-detalhe">
-        <div class="secao">
-            <h2>DESCRIÇÃO</h2>
-            <p>@Model.Descricao</p>
-        </div>
+        <form asp-controller="Carrinho" asp-action="ComprarAgora" method="post">
+            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+            <input type="hidden" name="quantidade" value="1" />
+            <button type="submit" class="btn-comprar">Comprar Agora</button>
+        </form>
+
+        <form asp-controller="Carrinho" asp-action="AddToCart" method="post">
+            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+            <input type="hidden" name="quantidade" value="1" />
+            <button type="submit" class="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+        </form>
     </div>
 </div>
