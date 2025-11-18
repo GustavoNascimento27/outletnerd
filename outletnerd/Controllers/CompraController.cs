@@ -8,5 +8,8 @@ namespace outletnerd.Controllers
         {
             return View();
         }
+        
     }
+    
+
 }
