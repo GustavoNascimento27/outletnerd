@@ -218,6 +218,18 @@ input{
     border: none;
     cursor: pointer;
 }
+.btn-login2 {
+    background: #00C4B4 !important;
+    color: white !important;
+    width: 22rem;
+    height: 3.5rem;
+    border-radius: 30px !important;
+    font-size: 18px;
+    margin-top: 1rem !important;
+    border: none;
+    margin-left: 2rem;
+    cursor: pointer;
+}
 .btn-loginF {
     background: #00C4B4 !important;
     color: white !important;

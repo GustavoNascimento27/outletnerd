@@ -9,5 +9,6 @@ namespace outletnerd.Rep.Interfaces
         public Task<IEnumerable<Produto>> Decoracoes();
         public Task<IEnumerable<Produto>> Livros();
         public Task<IEnumerable<Produto>> Roupas();
+
     }
 }

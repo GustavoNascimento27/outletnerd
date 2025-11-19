@@ -17,11 +17,16 @@ namespace outletnerd.Controllers
         }
 
         // /Compra/Index/5
-        [Route("Compra/{id:int}")]
+        //[Route("Compra/{id:int}")]
+        public IActionResult Index()
+        {
+            return View();
+        }
+        [HttpGet]
         public async Task<IActionResult> Index(int id)
         {
             var produto = await _produtoRep.ProdutoPorId(id);
-            return View(produto);
+            return RedirectToAction("Index", "Compra");
         }
 
 

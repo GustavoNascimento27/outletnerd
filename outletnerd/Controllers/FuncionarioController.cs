@@ -48,5 +48,11 @@ namespace outletnerd.Controllers
             }
             return View();
         }
+        public IActionResult Excluir(Produto produto)
+        {
+
+            _inFuncionario.Excluir(produto.IdProduto);
+            return View();
+        }
     }
 }

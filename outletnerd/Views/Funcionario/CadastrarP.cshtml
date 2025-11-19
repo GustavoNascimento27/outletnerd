@@ -1,46 +1,55 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model outletnerd.Models.Produto
+﻿@model IEnumerable<outletnerd.Models.Produto>
+
 @{
     ViewData["Title"] = "Cadastro de Produtos";
 }
-<h1>Cadastro</h1>
 
+<h1>Cadastro</h1>
 <h4>Produtos</h4>
 <hr />
+
 <div class="d-gridC">
     <div class="colC">
-        <form asp-controller="Funcionario" asp-action="CadastrarP">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <form asp-controller="Funcionario" asp-action="CadastrarP" method="post">
 
             <div class="form-groupC">
-                <input asp-for="Nome" class="form-controlC" />
+                <input name="Nome" class="form-controlC" placeholder="Nome" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Descricao" class="form-controlC" />
+                <input name="Descricao" class="form-controlC" placeholder="Descrição" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Preco" class="form-controlC" />
+                <input name="Preco" class="form-controlC" placeholder="Preço" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="ImageUrl" class="form-controlC" />
+                <input name="ImageUrl" class="form-controlC" placeholder="URL da Imagem" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Quantidade" class="form-controlC" />
+                <input name="Quantidade" class="form-controlC" placeholder="Quantidade" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Categoria" class="form-controlC" />
+                <input name="Categoria" class="form-controlC" placeholder="Categoria" />
             </div>
+
             <div class="form-groupC">
-                <input asp-action="CadastrarP" type="submit" value="Create" class="btn-login" />
+                <button type="submit" class="btn-login2">Cadastrar</button>
             </div>
+
         </form>
+
     </div>
 </div>
-<div>
-    <a asp-controller="Home" asp-action="Index">Back to List</a>
-</div>
+<!--<form asp-controller="Produto" asp-action="Excluir" method="post">
+    <button type="submit" class="btn-primary">Excluir</button>
+</form>-->
+
+
+<a asp-controller="Home" asp-action="Index">Voltar</a>
 
 @section Scripts {
     @{

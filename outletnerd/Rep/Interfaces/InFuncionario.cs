@@ -5,5 +5,7 @@ namespace outletnerd.Rep.Interfaces
     {
         void CadastrarFuncionario(Funcionario funcionario);
         public void CadastrarProduto(Produto produto);
+        public void Excluir(int Id);
+        public void Atualizar(Produto produto);
     }
 }

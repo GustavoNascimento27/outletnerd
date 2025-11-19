@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "OutletNerd";
+    @model IEnumerable<outletnerd.Models.Produto>
+}
+<div class="d-grid">
+    @foreach (var produto in Model)
+    {
+        <div class="col">
+            <div class="card">
+
+                <img src="@Url.Content(produto.ImageUrl)" class="card-img-top" alt="@produto.Nome"
+                     style="height: 200px; object-fit: cover;" />
+
+                <div class="card-body">
+                    <h5 class="card-title">@produto.Nome</h5>
+
+                    <p class="card-textpreco">Preço: R$ @produto.Preco.ToString("F2")</p>
+
+                    <form asp-controller="Produto" asp-action="Excluir" method="post">
+                        <button type="submit" class="btn-primary">Excluir</button>
+                    </form>
+
+
+                    <form asp-controller="Produto" asp-action="Atualizar" method="post">
+                        <input type="hidden" name="id" value="@produto.IdProduto" />
+                        <button type="submit" class="btn-comprar">A</button>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    }
+</div>

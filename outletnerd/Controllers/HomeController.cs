@@ -1,14 +1,15 @@
-using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using outletnerd.Models;
 using outletnerd.Rep;
+using outletnerd.Rep.Interfaces;
+using System.Diagnostics;
 
 namespace outletnerd.Controllers
 {
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
-        private readonly ProdutoRep _produtoRep;
+        private readonly InProduto _produtoRep;
 
         public HomeController(ILogger<HomeController> logger, ProdutoRep produtoRep)
         {
@@ -42,6 +43,7 @@ namespace outletnerd.Controllers
             var Rou = await _produtoRep.Roupas();
             return View(Rou);
         }
+        
 
 
 

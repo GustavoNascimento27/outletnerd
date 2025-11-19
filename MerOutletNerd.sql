@@ -113,4 +113,4 @@ BEGIN
 END$$
 
 DELIMITER ;
-insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Pelúcias de Pokémon', '4 Pelúcias de pokémon', 50.90, 'imgProd/pikachu.png', 100, 'Brinquedos');
+insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Luminária Mario', 'Luminária Mario', 104.90, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqwMAlqBLjEJWnZMCG-_KGDF3RISqhjjeabA&s', 100, 'Decorações');

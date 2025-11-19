@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using outletnerd.Models;
 using outletnerd.Rep.Interfaces;
+using static outletnerd.Models.Constantes.Cliente;
 namespace outletnerd.Rep
 {
     public class ProdutoRep : InProduto
@@ -47,6 +48,7 @@ namespace outletnerd.Rep
             using var connection = new MySqlConnection(_connectionString);
             var sql = "Select IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade, Categoria from Produto where Categoria = 'Roupas'";
             return await connection.QueryAsync<Produto>(sql);
-        } 
+        }
+        
     }
 }
