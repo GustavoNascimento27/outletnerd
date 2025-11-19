@@ -1,0 +1,33 @@
+﻿@{
+    @model outletnerd.Models.Produto
+}
+
+<div class="produto-detalhe-container">
+    <div class="produto-card">
+        <div class="produto-imagem">
+            <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Nome" />
+        </div>
+
+        <div class="produto-info">
+            <h1>@Model.Nome</h1>
+            <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
+        </div>
+
+        <form asp-controller="Home" asp-action="ProdutoUnico" method="post">
+            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+            <input type="hidden" name="quantidade" value="1" />
+            <button type="submit" class="btn-comprar">Comprar Agora</button>
+        </form>
+
+        <form asp-controller="Carrinho" asp-action="AddToCart" method="post">
+            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+            <input type="hidden" name="quantidade" value="1" />
+            <button type="submit" class="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+        </form>
+    </div>
+</div>
+@if (Model == null)
+{
+    <h2>Produto não encontrado.</h2>
+    return;
+}

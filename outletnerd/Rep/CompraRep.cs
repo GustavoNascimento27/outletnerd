@@ -13,11 +13,11 @@ namespace outletnerd.Rep
         {
             _connectionString = connectionString;
         }
-        public async Task<IEnumerable<Compra>> ItemCompra()
+        public async Task<Produto> ItemCompra(int id)
         {
             using var connection = new MySqlConnection(_connectionString);
-            var sql = "CALL GetProdutosCompra();";
-            return await connection.QueryAsync<Compra>(sql);
+            var sql = "SELECT IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade, Categoria FROM Produto WHERE IdProduto = @idProduto";
+            return await connection.QueryFirstOrDefaultAsync<Produto>(sql, new { IdProduto = id });
         }
     }
 }

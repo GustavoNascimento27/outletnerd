@@ -67,12 +67,12 @@ create table Pedido(
 -- Compra
 create table Compra(
   IdCompra int primary key auto_increment,
-  DataCompra date not null,
-  Parcela int not null,
+  Nome varchar(100) not null,
+  Descricao varchar(250) not null,
+  DataCompra date,
+  Parcela int,
   QtdTotal int not null,
   ValorTotal decimal(8,2),
-  IdPedido int not null,
-  foreign key (IdPedido) references Pedido(IdPedido)
 );
 
 -- Pagamento
@@ -107,9 +107,7 @@ BEGIN
         p.Quantidade,
         p.Categoria
     FROM Produto p
-    INNER JOIN Produto ip ON p.IdProduto = ip.IdProduto
-    INNER JOIN Carrinho c ON ip.IdCarrinho = c.IdCarrinho
-    INNER JOIN Compra comp ON comp.IdPedido = ped.IdPedido;
+    INNER JOIN Produto ip ON p.IdProduto = ip.IdProduto;
 END$$
 
 DELIMITER ;

@@ -68,9 +68,11 @@
                         
                         <button type="submit" class="btn-primary">Adicionar ao Carrinho</button>
                     </form>
-                            <form asp-controller="Compra" asp-action="Index" method="post">
+                            <form asp-controller="Home" asp-action="ProdutoUnico" method="get">
+                                <input type="hidden" name="id" value="@produto.IdProduto" />
                                 <button type="submit" class="btn-comprar">Comprar</button>
                             </form>
+                         
                 </div>
             </div>
         </div>

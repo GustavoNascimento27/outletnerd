@@ -43,7 +43,12 @@ namespace outletnerd.Controllers
             var Rou = await _produtoRep.Roupas();
             return View(Rou);
         }
-        
+        [HttpGet]
+        public async Task<IActionResult> ProdutoUnico(int id)
+        {
+            var ProdUnic = await _produtoRep.ProdutoPorId(id);
+            return View(ProdUnic);
+        }
 
 
 
