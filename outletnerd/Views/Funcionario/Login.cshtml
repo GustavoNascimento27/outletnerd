@@ -1,0 +1,28 @@
+﻿@model outletnerd.Models.Funcionario
+@{
+    ViewData["Title"] = "Cadastro de Funcionário/Membro da empresa";
+}
+<h1 class="CdC">Login de Membros e Administradores</h1>
+<div class="d-gridC">
+    <div class="colC">
+        <form asp-controller="Funcionario" asp-action="Login">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-groupC">
+                <input asp-for="Email" class="form-controlC" placeholder="E-mail do funcionário" />
+            </div>
+            <div class="form-groupC">
+                <input asp-for="Senha" class="form-controlC" placeholder="Senha do funcionário" />
+            </div>
+            <div class="form-groupC">
+                <input type="submit" value="Cadastrar" class="btn-loginF" />
+            </div>
+        </form>
+    </div>
+</div>
+<div class="func">
+    <h3>Você é um cliente?</h3>
+    <a asp-action="CadastrarC" asp-controller="Cliente">Acesse o cadastro de Clientes</a>
+</div>
+<div>
+    <a asp-controller="Home" asp-action="Index">Back to List</a>
+</div>

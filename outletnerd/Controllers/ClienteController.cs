@@ -20,17 +20,17 @@ namespace outletnerd.Controllers
         [HttpGet]
         public IActionResult CadastrarC()
         {
+            
             return View();
         }
         [HttpPost]
         public IActionResult CadastrarC(Cliente cliente)
         {
-            var clienteId = cliente.IdCliente;
-            if (_inCliente.ObterCliente(clienteId) == null)
+            if (!ModelState.IsValid)
             {
                 _inCliente.CadastrarCliente(cliente);
             }
-                return View();
+            return RedirectToAction("Index", "Home");
         }
         [HttpGet]
         public IActionResult Login()
@@ -40,36 +40,11 @@ namespace outletnerd.Controllers
         [HttpPost]
         public IActionResult Login(Cliente cliente)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
-                return View(cliente);
+                _inCliente.Login(cliente.Email, cliente.Senha);
             }
-
-            // 1. Busca o cliente pelo e-mail
-            var clienteExistente = _inCliente.BuscaEmailCliente(cliente.Email);
-
-            // 2. Verifica se existe
-            if (clienteExistente == null)
-            {
-                ModelState.AddModelError("", "E-mail ou senha incorretos.");
-                return View(cliente);
-            }
-
-            var clienteLogado = _inCliente.Login(cliente.Email, cliente.Senha);
-
-            if (clienteLogado != null)
-            {
-                HttpContext.Session.SetInt32("ClienteId", cliente.IdCliente);
-                HttpContext.Session.SetString("ClienteEmail", cliente.Email);
-                HttpContext.Session.SetString("ClienteNome", cliente.Nome ?? "Cliente");
-
-                return RedirectToAction("Compra", "Cliente");
-            }
-            else
-            {
-                ModelState.AddModelError("", "E-mail ou senha incorretos.");
-                return View(cliente);
-            }
+            return RedirectToAction("Index", "Home");
         }
         public IActionResult Compra()
         {

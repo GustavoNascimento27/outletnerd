@@ -8,7 +8,7 @@ create table Cliente(
   Email varchar(100) not null,
   Nome varchar(80) not null,
   Senha varchar(30) not null,
-  Telefone bigint not null
+  Telefone varchar(20) not null
 );
 
 -- Funcionario
@@ -72,7 +72,7 @@ create table Compra(
   DataCompra date,
   Parcela int,
   QtdTotal int not null,
-  ValorTotal decimal(8,2),
+  ValorTotal decimal(8,2)
 );
 
 -- Pagamento

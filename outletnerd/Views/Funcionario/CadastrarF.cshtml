@@ -1,41 +1,69 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@model outletnerd.Models.Funcionario
+﻿@model IEnumerable<Funcionario>
+
 @{
     ViewData["Title"] = "Cadastro de Funcionário/Membro da empresa";
 }
+
 <h1 class="CdC">Cadastro de Membros e Administradores</h1>
+
 <div class="d-gridC">
     <div class="colC">
-        <form asp-controller="Funcionario" asp-action="CadastrarF">
+        <form asp-controller="Funcionario" asp-action="CadastrarF" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 
             <div class="form-groupC">
-                <input asp-for="Nome" class="form-controlC" placeholder="Nome do funcionário" />
+                <input name="Nome" class="form-controlC" placeholder="Nome do funcionário" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Email" class="form-controlC" placeholder="E-mail do funcionário" />
+                <input name="Email" class="form-controlC" placeholder="E-mail do funcionário" />
             </div>
+
             <div class="form-groupC">
-                <input asp-for="Senha" class="form-controlC" placeholder="Senha do funcionário" />
+                <input name="Senha" class="form-controlC" placeholder="Senha do funcionário" />
             </div>
+
             <div class="form-groupC">
-                <input asp-action="CadastrarF" type="submit" value="Cadastrar" class="btn-loginF" />
+                <button type="submit" class="btn-loginF">Cadastrar</button>
             </div>
         </form>
     </div>
 </div>
-<div class="func">
-    <h3>Você é um cliente?</h3>
-    <a asp-action="CadastrarC" asp-controller="Cliente">Acesse o cadastro de Clientes</a>
+
+<hr />
+
+<h3>Funcionários cadastrados</h3>
+
+<div class="d-grid">
+    @foreach (var funcionario in Model)
+    {
+        <div class="col">
+            <div class="card">
+                <div class="produtoitem"
+                     style="display:flex; background:white; border-radius:15px; margin-bottom:25px;
+                            box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
+
+                    <div style="padding:20px; flex:1;">
+                        <h5 class="TituloP">@funcionario.Nome</h5>
+                        <p class="NomeP"><strong>@funcionario.Email</strong></p>
+                        <form asp-controller="Funcionario" asp-action="ExcluirF" method="post">
+                            <input type="hidden" name="id" value="@funcionario.IdFuncionario" />
+                            <button type="submit" class="btn-loginF" style="background:red; color:white;">
+                                Excluir
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    }
 </div>
+
 <div>
-    <a asp-controller="Home" asp-action="Index">Back to List</a>
+    <a asp-controller="Funcionario" asp-action="CadastrarP">Voltar</a>
 </div>
 
 @section Scripts {
-    @{
-        await Html.RenderPartialAsync("_ValidationScriptsPartial");
-    }
+    @await Html.PartialAsync("_ValidationScriptsPartial")
 }

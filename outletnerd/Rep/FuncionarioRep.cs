@@ -2,6 +2,7 @@
 using MySql.Data.MySqlClient;
 using outletnerd.Models;
 using outletnerd.Rep.Interfaces;
+using System.Data;
 namespace outletnerd.Rep
 {
     public class FuncionarioRep : InFuncionario
@@ -43,48 +44,110 @@ namespace outletnerd.Rep
                 conexao.Close();
             }
         }
-        public void Excluir(int Id)
+        public Funcionario Login(string Email, string Senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("delete from Produto WHERE IdProduto=@IdProduto", conexao);
-                cmd.Parameters.AddWithValue("@IdProduto", Id);
-                int i = cmd.ExecuteNonQuery();
-                conexao.Close();
-            }
-        }
-        public void Atualizar(Produto produto)
-        {
-            try
-            {
+                MySqlCommand cmd = new MySqlCommand("select Email from Funcionario WHERE Email=@Email and Senha=@Senha", conexao);
+                cmd.Parameters.AddWithValue("@Email", Email);
+                cmd.Parameters.AddWithValue("@Senha", Senha);
 
-                using (var conexao = new MySqlConnection(_connectionString))
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                MySqlDataReader dr;
+
+                Funcionario funcionario = new Funcionario();
+                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                while (dr.Read())
                 {
-                    conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("update Produto set Nome=@Nome, Descricao=@Descricao, Preco=@Preco,  ImageUrl=@ImageUrl, " +
-                        " Quantidade=@Quantidade, Categoria=@Categoria WHERE IdProduto=@Id ", conexao);
+                    funcionario.Email = (string)(dr["Email"]);
+                    funcionario.Senha = (string)(dr["Senha"]);
 
-                    cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = produto.Nome;
-                    cmd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = produto.Descricao;
-                    cmd.Parameters.Add("@Preco", MySqlDbType.VarChar).Value = produto.Preco;
-                    cmd.Parameters.Add("@ImageUrl", MySqlDbType.VarChar).Value = produto.ImageUrl;
-                    cmd.Parameters.Add("@Quantidade", MySqlDbType.VarChar).Value = produto.Quantidade;
-                    cmd.Parameters.Add("@Categoria", MySqlDbType.VarChar).Value = produto.Categoria;
-                    cmd.ExecuteNonQuery();
-                    conexao.Close();
                 }
-
-            }
-            catch (MySqlException ex)
-            {
-                throw new Exception("Erro no banco ao atualizar cliente" + ex.Message);
-            }
-            catch (Exception ex)
-            {
-                throw new Exception("Erro na aplicação ao atualizar cliente" + ex.Message);
+                return funcionario;
             }
         }
+        public async Task<IEnumerable<Funcionario>> ListarTodos()
+        {
+            using var conexao = new MySqlConnection(_connectionString);
+            var sql = "SELECT * FROM Funcionario";
+            return await conexao.QueryAsync<Funcionario>(sql);
+        }
+        public async Task<Funcionario?> ExcluirF(int id)
+        {
+            using var conexao = new MySqlConnection(_connectionString);
+            var funcionario = await conexao.QueryFirstOrDefaultAsync<Funcionario>(
+                "SELECT * FROM Funcionario WHERE IdFuncionario = @Id",
+                new { Id = id }
+            );
 
+            if (funcionario == null)
+            {
+                return null;
+            }
+
+            await conexao.ExecuteAsync(
+                "DELETE FROM Funcionario WHERE IdFuncionario = @Id",
+                new { Id = id }
+            );
+
+            return funcionario;
+        }
+        /* public async Task<Produto?> Excluir(int id)
+         {
+             using var conexao = new MySqlConnection(_connectionString);
+             var produto = await conexao.QueryFirstOrDefaultAsync<Produto>(
+                 "SELECT * FROM Produto WHERE IdProduto = @Id",
+                 new { Id = id }
+             );
+
+             if (produto == null)
+             {
+                 return null;
+             }
+
+             await conexao.ExecuteAsync(
+                 "DELETE FROM Produto WHERE IdProduto = @Id",
+                 new { Id = id }
+             );
+
+             return produto;
+         }
+         public void Atualizar(Produto produto)
+         {
+             try
+             {
+
+                 using (var conexao = new MySqlConnection(_connectionString))
+                 {
+                     conexao.Open();
+                     MySqlCommand cmd = new MySqlCommand("update Produto set Nome=@Nome, Descricao=@Descricao, Preco=@Preco,  ImageUrl=@ImageUrl, " +
+                         " Quantidade=@Quantidade, Categoria=@Categoria WHERE IdProduto=@Id ", conexao);
+
+                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = produto.Nome;
+                     cmd.Parameters.Add("@Descricao", MySqlDbType.VarChar).Value = produto.Descricao;
+                     cmd.Parameters.Add("@Preco", MySqlDbType.VarChar).Value = produto.Preco;
+                     cmd.Parameters.Add("@ImageUrl", MySqlDbType.VarChar).Value = produto.ImageUrl;
+                     cmd.Parameters.Add("@Quantidade", MySqlDbType.VarChar).Value = produto.Quantidade;
+                     cmd.Parameters.Add("@Categoria", MySqlDbType.VarChar).Value = produto.Categoria;
+                     cmd.ExecuteNonQuery();
+                     conexao.Close();
+                 }
+
+             }
+             catch (MySqlException ex)
+             {
+                 throw new Exception("Erro no banco ao atualizar cliente" + ex.Message);
+             }
+             catch (Exception ex)
+             {
+                 throw new Exception("Erro na aplicação ao atualizar cliente" + ex.Message);
+             }
+         }
+
+         void InFuncionario.Excluir(int Id)
+         {
+             throw new NotImplementedException();
+         }*/
     }
 }

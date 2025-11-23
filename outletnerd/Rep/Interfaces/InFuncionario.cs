@@ -5,7 +5,8 @@ namespace outletnerd.Rep.Interfaces
     {
         void CadastrarFuncionario(Funcionario funcionario);
         public void CadastrarProduto(Produto produto);
-        public void Excluir(int Id);
-        public void Atualizar(Produto produto);
+        public Funcionario Login(string Email, string Senha);
+        public Task<IEnumerable<Funcionario>> ListarTodos();
+        public Task<Funcionario?> ExcluirF(int id);
     }
 }
