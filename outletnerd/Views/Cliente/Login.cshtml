@@ -2,6 +2,46 @@
 @{
     ViewData["Title"] = "Cadastro";
 }
+<div class="text-center">
+    <header>
+
+        <nav class="navbar-murph">
+
+            <div class="logo">
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+            </div>
+            <div class="search-bar">
+                <form method="get" action="@Url.Action("Index", "YourController")">
+                    <div class="input-group">
+                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
+
+                        <div class="asearch-container">
+                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="nav_btn">
+                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+                <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+            </div>
+
+        </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <ul>
+                    <li class="itemMenu"><a asp-controller="Cliente" asp-action="CadastrarC">Cadastro de Clientes</a></li>
+                    <li class="itemMenu"><a asp-controller="Cliente" asp-action="Login">Login de Clientes</a></li>
+                    <li class="itemMenu"><a asp-controller="Funcionario" asp-action="Login">Login de Administradores</a></li>
+                </ul>
+            </div>
+
+        </div>
 <h1 class="CdC">Login de Clientes</h1>
 <div class="d-gridC">
     <div class="colC">
@@ -17,7 +57,6 @@
                 <input type="submit" class="btn-login" value="Cadastro" />
             </div>
             <div>
-                <a asp-controller="Home" asp-action="Index">Back to List</a>
             </div>
         </form>
     </div>

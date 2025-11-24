@@ -1,28 +1,81 @@
 ﻿@{
     @model outletnerd.Models.Produto
 }
+<div class="text-center">
+    <header>
 
-<div class="produto-detalhe-container">
-    <div class="produto-card">
-        <div class="produto-imagem">
-            <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Nome" />
+        <nav class="navbar-murph">
+
+            <div class="logo">
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+            </div>
+            <div class="search-bar">
+                <form method="get" action="@Url.Action("Index", "YourController")">
+                    <div class="input-group">
+                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
+
+                        <div class="asearch-container">
+                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="nav_btn">
+                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+                <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+            </div>
+
+        </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <ul>
+                    <li class="itemMenu"><a asp-action="Decoracoes" asp-controller="Home">Decorações</a></li>
+                    <li class="itemMenu"><a asp-action="Brinquedos" asp-controller="Home">Brinquedos</a></li>
+                    <li class="itemMenu"><a asp-action="Livros" asp-controller="Home">Livros e Mangás</a></li>
+                    <li class="itemMenu"><a asp-action="Roupas" asp-controller="Home">Roupas</a></li>
+                </ul>
+            </div>
+
         </div>
+        <div class="produto-detalhe-container">
 
-        <div class="produto-info">
-            <h1>@Model.Nome</h1>
-            <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
+            <div class="produto-card">
+
+                <!-- IMAGEM -->
+                <div class="produto-imagem">
+                    <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Nome" class="imagem-produto" />
+                </div>
+
+                <!-- TÍTULO + PREÇO -->
+                <div class="produto-info">
+                    <h1 class="produto-nome">@Model.Nome</h1>
+
+                    <div class="preco-container">
+                        <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
+                        <span class="parcelamento">5x de 10,90</span>
+                    </div>
+                </div>
+
+                <!-- FRETE GRÁTIS -->
+                <div class="frete-container">
+                    <img src="~/img/caminhao.png" alt="Frete grátis" class="icone-frete" />
+                    <span class="frete-texto">FRETE GRÁTIS APENAS PARA A GRANDE SÃO PAULO</span>
+                </div>
+
+                <!-- BOTÃO CARRINHO -->
+                <form asp-controller="Carrinho" asp-action="AddToCart" method="post" class="form-carrinho">
+                    <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+                    <input type="hidden" name="quantidade" value="1" />
+                    <button type="submit" class="btn-adicionar-carrinho-grande">
+                        Adicionar ao Carrinho
+                    </button>
+                </form>
+
+            </div>
+
         </div>
-
-        <form asp-controller="Carrinho" asp-action="ComprarAgora" method="post">
-            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-            <input type="hidden" name="quantidade" value="1" />
-            <button type="submit" class="btn-comprar">Comprar Agora</button>
-        </form>
-
-        <form asp-controller="Carrinho" asp-action="AddToCart" method="post">
-            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-            <input type="hidden" name="quantidade" value="1" />
-            <button type="submit" class="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
-        </form>
-    </div>
-</div>

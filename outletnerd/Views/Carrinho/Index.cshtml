@@ -5,7 +5,47 @@
     var descontoPix = total * 0.10m; // 10% de desconto no Pix
     var totalPix = total - descontoPix;
 }
+<div class="text-center">
+    <header>
 
+        <nav class="navbar-murph">
+
+            <div class="logo">
+                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+            </div>
+            <div class="search-bar">
+                <form method="get" action="@Url.Action("Index", "YourController")">
+                    <div class="input-group">
+                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
+
+                        <div class="asearch-container">
+                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+
+
+            <div class="nav_btn">
+                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+                <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+            </div>
+
+        </nav>
+
+        <div class="navbar-categorias">
+            <div class="navbar-cat">
+                <ul>
+                    <li class="itemMenu"><a asp-action="Decoracoes" asp-controller="Home">Decorações</a></li>
+                    <li class="itemMenu"><a asp-action="Brinquedos" asp-controller="Home">Brinquedos</a></li>
+                    <li class="itemMenu"><a asp-action="Livros" asp-controller="Home">Livros e Mangás</a></li>
+                    <li class="itemMenu"><a asp-action="Roupas" asp-controller="Home">Roupas</a></li>
+                </ul>
+            </div>
+
+        </div>
 <h1 style="margin:40px 0 20px 40px; font-size:2.5rem;">Meu Carrinho</h1>
 
 <div style="display:flex; gap:40px; flex-wrap:wrap; max-width:1400px; margin:0 auto; padding:20px;">
