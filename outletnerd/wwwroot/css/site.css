@@ -135,7 +135,7 @@ input{
     }
         .navbar-cat ul li a:hover {
             font-size: 40px;
-            color: darkred;
+            color: coral;
             transition:ease-in;
             transition-delay:0.2s;
         }
@@ -616,7 +616,7 @@ text-align:center;
     margin: 50px 0;
 }
 .produto-detalhe-container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 40px auto;
     padding: 0 20px;
     font-family: Arial, sans-serif;
@@ -633,6 +633,7 @@ text-align:center;
 
 .produto-imagem {
     flex: 1;
+    width: 1600px;
     padding: 30px;
     background: #f9f9f9;
     display: flex;
@@ -642,7 +643,7 @@ text-align:center;
 
     .produto-imagem img {
         max-width: 100%;
-        max-height: 500px;
+        max-height: 1000px;
         object-fit: contain;
     }
 
@@ -751,7 +752,7 @@ text-align:center;
 
 /* Imagem */
 .produto-imagem img.imagem-produto {
-    width: 280px;
+    width: 800px;
     border-radius: 14px;
     box-shadow: 0px 0px 10px #dcdcdc;
 }
@@ -759,7 +760,7 @@ text-align:center;
 /* Nome */
 .produto-nome {
     margin-top: 20px;
-    font-size: 32px;
+    font-size: 64px;
     font-weight: bold;
 }
 
