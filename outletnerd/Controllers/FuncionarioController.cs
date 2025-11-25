@@ -75,10 +75,6 @@ namespace outletnerd.Controllers
             if (ModelState.IsValid)
             {
                 _inFuncionario.Login(funcionario.Email, funcionario.Senha);
-            }
-            else if (!ModelState.IsValid)
-            {
-                return RedirectToAction("Login", "Funcionario");
                 
             }
             return RedirectToAction("CadastrarP", "Funcionario");
