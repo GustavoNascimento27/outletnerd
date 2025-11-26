@@ -132,16 +132,18 @@ input{
         display: inline-flex;
         font-size: 35px;
         font-family: Impact;
+        transition:0.5s ease-in-out;
     }
         .navbar-cat ul li a:hover {
             font-size: 40px;
             color: coral;
-            transition:ease-in;
+            transition:ease-in-out;
             transition-delay:0.2s;
         }
         .navbar-cat ul li a {
             color: white;
             text-decoration: none;
+            transition: 0.5s ease-in-out;
         }
 .banner{
     border: hidden;
@@ -164,6 +166,7 @@ input{
     margin-bottom: 5%;
     border: 1px solid lightgray;
     border-radius: 15px;
+    
 }
     .col:hover 
     {
@@ -652,14 +655,17 @@ text-align:center;
     margin: 50px 0;
 }
 .produto-detalhe-container {
-    max-width: 1500px;
+    
+    max-width: 120%;
     margin: 40px auto;
-    padding: 0 20px;
+    padding: 0vh 20vw;
     font-family: Arial, sans-serif;
 }
 
 .produto-card {
     display: flex;
+    height:55rem;
+    width: 1000rem;
     background: white;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -669,7 +675,7 @@ text-align:center;
 
 .produto-imagem {
     flex: 1;
-    width: 1600px;
+    width: 650px;
     padding: 30px;
     background: #f9f9f9;
     display: flex;
@@ -683,12 +689,12 @@ text-align:center;
         object-fit: contain;
     }
 
-.produto-info {
+.produto-info-nome{
     flex: 1;
-    padding: 40px;
+    margin-left: 8.5rem;
+    font-size: 60px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
 }
 
 .produto-titulo {

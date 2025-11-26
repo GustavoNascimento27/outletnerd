@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
+using MySqlX.XDevAPI.Common;
 using outletnerd.Models;
 using outletnerd.Rep;
 using outletnerd.Rep.Interfaces;
@@ -70,13 +72,27 @@ namespace outletnerd.Controllers
             return View();
         }
         [HttpPost]
-        public IActionResult Login(Funcionario funcionario)
+        public IActionResult Login(string Email, string Senha, Funcionario funcionario)
         {
-            if (!ModelState.IsValid)
+            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Senha))
             {
-                _inFuncionario.Login(funcionario.Email, funcionario.Senha);
-                
+                TempData["Mensagem"] = "Preencha todos os campos.";
+                TempData["TipoMensagem"] = "warning";
+                return RedirectToAction("Login", "Funcionario");
             }
+            var result = _inFuncionario.Login(Email, Senha);
+            
+
+            if (result == null)
+            {
+                TempData["Mensagem"] = "Email/Senha incorretos";
+                TempData["TipoMensagem"] = "warning";
+                return RedirectToAction("Login", "Funcionario");
+            }
+            
+            HttpContext.Session.SetInt32("UserId", funcionario.IdFuncionario);
+            HttpContext.Session.SetString("UserEmail", funcionario.Email);
+            HttpContext.Session.SetString("UserSenha", funcionario.Senha);
             return RedirectToAction("CadastrarP", "Funcionario");
         }
         [HttpPost]

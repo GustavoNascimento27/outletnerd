@@ -260,24 +260,33 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select Email from Cliente WHERE Email=@Email and Senha=@Senha", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdFuncionario, Email, Senha FROM Cliente WHERE Email=@Email AND Senha=@Senha", conexao);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                MySqlDataReader dr;
-
-                Cliente cliente = new Cliente();
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while (dr.Read())
+                using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
-                    cliente.Email = (string)(dr["Email"]);
-                    cliente.Senha = (string)(dr["Senha"]);
+                    if (dr.Read())
+                    {
+
+                        Cliente cliente = new Cliente
+                        {
+                            Senha = (string)dr["Senha"],
+                            IdCliente = (int)dr["IdFuncionario"],
+                            Email = (string)dr["Email"]
+                        };
+                        return cliente;
+
+                    }
+                    //MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+
 
                 }
-                return cliente;
             }
+            return null;
         }
+
         public Cliente BuscaCPFCliente(string CPF)
         {
             throw new NotImplementedException();

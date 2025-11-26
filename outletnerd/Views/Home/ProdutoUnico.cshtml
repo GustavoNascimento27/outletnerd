@@ -1,15 +1,52 @@
 ﻿@{
     @model outletnerd.Models.Produto
 }
+<nav class="navbar-murph">
 
+    <div class="logo">
+        <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+    </div>
+    <div class="search-bar">
+        <form method="get" action="@Url.Action("Index", "YourController")">
+            <div class="input-group">
+                <!--<button type="submit" class="btn-busca">Buscar</button>-->
+
+                <div class="asearch-container">
+                    <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                    <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                </div>
+
+            </div>
+        </form>
+    </div>
+
+
+    <div class="nav_btn">
+        <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+        <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+    </div>
+
+</nav>
+
+<div class="navbar-categorias">
+    <div class="navbar-cat">
+        <ul>
+            <li class="itemMenu"><a asp-action="Decoracoes" asp-controller="Home">Decorações</a></li>
+            <li class="itemMenu"><a asp-action="Brinquedos" asp-controller="Home">Brinquedos</a></li>
+            <li class="itemMenu"><a asp-action="Livros" asp-controller="Home">Livros e Mangás</a></li>
+            <li class="itemMenu"><a asp-action="Roupas" asp-controller="Home">Roupas</a></li>
+        </ul>
+    </div>
+
+</div>
 <div class="produto-detalhe-container">
     <div class="produto-card">
-        <div class="produto-imagem">
-            <img src="@Url.Content(Model.ImageUrl)" alt="@Model.Nome" />
+        <div >
+            <img class="produto-imagem" src="@Url.Content(Model.ImageUrl)" alt="@Model.Nome" />
         </div>
 
-        <div class="produto-info">
-            <h1>@Model.Nome</h1>
+        <div class="produto-infoT">
+            <h1 class="produto-info-nome">@Model.Nome</h1>
             <span class="preco-atual">R$ @Model.Preco.ToString("F2")</span>
         </div>
 

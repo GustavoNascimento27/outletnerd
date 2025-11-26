@@ -3,6 +3,7 @@ using MySql.Data.MySqlClient;
 using outletnerd.Models;
 using outletnerd.Rep.Interfaces;
 using System.Data;
+using System.Text;
 namespace outletnerd.Rep
 {
     public class FuncionarioRep : InFuncionario
@@ -44,29 +45,39 @@ namespace outletnerd.Rep
                 conexao.Close();
             }
         }
+       
         public Funcionario Login(string Email, string Senha)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select Email from Funcionario WHERE Email=@Email and Senha=@Senha", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdFuncionario, Email, Senha FROM Funcionario WHERE Email=@Email AND Senha=@Senha", conexao);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
-                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-                MySqlDataReader dr;
-
-                Funcionario funcionario = new Funcionario();
-                dr = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                while (dr.Read())
+                using (MySqlDataReader dr = cmd.ExecuteReader())
                 {
-                    funcionario.Email = (string)(dr["Email"]);
-                    funcionario.Senha = (string)(dr["Senha"]);
+                    if (dr.Read())
+                    {
+                        
+                            Funcionario funcionario = new Funcionario
+                            {
+                                Senha = (string)dr["Senha"],
+                                IdFuncionario = (int)dr["IdFuncionario"],
+                                Email = (string)dr["Email"]
+                            };
+                            return funcionario;
+                        
+                    }
+                    //MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+
 
                 }
-                return funcionario;
             }
+            return null;
         }
+
         public async Task<IEnumerable<Funcionario>> ListarTodos()
         {
             using var conexao = new MySqlConnection(_connectionString);
