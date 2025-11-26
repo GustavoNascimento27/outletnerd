@@ -1,10 +1,10 @@
 
 
-@media (min-width: 768px) {
   html {
+      max-width:100%;
     font-size: 16px;
   }
-}
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -170,23 +170,46 @@ input{
         transform: translateY(-8px);
     }
 .d-gridC {
-    width: 120%;
+    
+    width: 100%;
     gap: 15%;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
-    margin-left: 50%;
-    margin-top: 5%;
+    justify-content:center;
+    margin-top: 2%;
+    border-radius: 15px;
+}
+.d-gridC2 {
+    width: 100%;
+    gap: 15%;
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 2%;
     border-radius: 15px;
 }
 .CdC{
+    font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-weight:lighter;
     text-align:center;
 }
 .colC {
     margin-left: 4rem;
     width: 35rem;
-    height: 37rem;
+    height: 32rem;
     margin-top: 0%;
+    border: 0.1px solid lightgray;
+    border-radius: 15px;
+    background: white;
+    padding-top: 40px;
+}
+.colC2 {
+    margin-left: 4rem;
+    width: 35rem;
+    height: 44rem;
+    margin-top: -1%;
     border: 0.1px solid lightgray;
     border-radius: 15px;
     background: white;
@@ -227,7 +250,7 @@ input{
     font-size: 18px;
     margin-top: 1rem !important;
     border: none;
-    margin-left: 47.2rem;
+    margin-left: 49rem;
     cursor: pointer;
 }
 .btn-loginF {
@@ -381,6 +404,17 @@ input{
     cursor: pointer;
     margin-top:2rem;
 }
+.btn-primary2 {
+    background-color: black;
+    border: none;
+    width: 140%;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 2rem;
+}
 .btn-comprar {
     background-color: green;
     border: none;
@@ -466,12 +500,14 @@ text-align:center;
     display: flex;
     background: white;
     border-radius: 15px;
-    margin-bottom: 20px;
+    max-width:70%;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     overflow: hidden;
     padding: 15px;
 }
-
+.proditem {
+    margin-top: 50rem;
+}
 .produto-img {
     width: 140px;
     height: 140px;
@@ -820,3 +856,6 @@ text-align:center;
     .btn-adicionar-carrinho-grande:hover {
         background: #31a84a;
     }
+.form-groupC{
+    border:0.2px;
+}

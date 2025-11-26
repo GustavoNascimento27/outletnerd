@@ -44,7 +44,8 @@
         </div>
 
 <h1 class="CdC">Cadastro de Produtos</h1>
-
+<div class="d-gridC2">
+        <div class="colC2">
 <form asp-controller="Funcionario" asp-action="CadastrarP" method="post">
 
     <div class="form-groupC">
@@ -72,24 +73,24 @@
     </div>
 
     <div class="form-groupC">
-        <button type="submit" class="btn-login2">Cadastrar</button>
+                    <button type="submit" class="btn-loginF">Cadastrar</button>
     </div>
 
 </form>
-
-
+        </div>
+        </div>
 <div>
     <a asp-controller="Home" asp-action="Index">Voltar</a>
 </div>
 
-<div style="flex:2; min-width:300px;">
+<div class="proditem">
 
 
     @if (Model != null && Model.Any())
     {
         foreach (var produto in Model)
         {
-            <div class="produtoitem" style="display:flex; background:white; border-radius:15px; margin-bottom:25px; box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
+            <div class="produtoitem" style="display:flex; background:white; border-radius:15px; margin-bottom:2rem; box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
 
                 <img src="@Url.Content(produto.ImageUrl)" class="ImgP" alt="@produto.Nome"
                      style="width:160px; height:160px; object-fit:cover; border-radius:15px; margin:15px;">
@@ -103,7 +104,7 @@
                         <!-- EXCLUIR PRODUTO -->
                         <form asp-controller="Funcionario" asp-action="Excluir" method="post">
                             <input type="hidden" name="id" value="@produto.IdProduto" />
-                            <button type="submit">Excluir</button>
+                                    <button class="btn-primary2" type="submit">Excluir</button>
                         </form>
 
                     </div>

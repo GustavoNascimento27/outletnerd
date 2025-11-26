@@ -72,7 +72,7 @@ namespace outletnerd.Controllers
         [HttpPost]
         public IActionResult Login(Funcionario funcionario)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 _inFuncionario.Login(funcionario.Email, funcionario.Senha);
                 
