@@ -92,7 +92,7 @@
                 Seu carrinho está vazio...
             </p>
             <a asp-controller="Home" asp-action="Index" class="btnHome"
-               style="display:block; margin:20px auto; padding:12px 30px; background:#00C4B4; color:white; border-radius:30px; text-align:center; width:250px;">
+               style="display:block; margin:20px auto; padding:12px 30px; background:darkred; color:white; border-radius:30px; text-align:center; width:250px;">
                 Continuar Comprando
             </a>
         }
@@ -113,13 +113,13 @@
 
             <div style="display:flex; margin:25px 0;">
                 <input type="text" placeholder="Cupom de Desconto" style="flex:1; padding:12px; border:1px solid #ccc; border-radius:8px 0 0 8px;" />
-                <button type="button" style="background:#00C4B4; color:white; border:none; padding:0 20px; border-radius:0 8px 8px 0; cursor:pointer;">
+                        <button type="button" style="background:darkred; color:white; border:none; padding:0 20px; border-radius:0 8px 8px 0; cursor:pointer;">
                     Adicionar
                 </button>
             </div>
 
             <div style="background:#f0f8f7; padding:18px; border-radius:12px; text-align:center; margin:25px 0;">
-                <strong style="font-size:1.4rem; color:#00C4B4;">R$ @totalPix.ToString("F2") no Pix</strong><br>
+                <strong style="font-size:1.4rem; color:darkred;">R$ @totalPix.ToString("F2") no Pix</strong><br>
                 <small>ou R$ @total.ToString("F2") em até 6x de R$ @(Math.Round(total / 6, 2)) sem juros</small>
             </div>
 

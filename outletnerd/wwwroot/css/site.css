@@ -147,7 +147,7 @@ input{
         }
 .banner{
     border: hidden;
-    opacity:50%;
+    opacity:100%;
     width:100%;
     height: 60vh;
     justify-content:center;
@@ -435,7 +435,18 @@ input{
     margin-top: 2rem;
 }
 .btn-comprar {
-    background-color: green;
+    background-color: darkred;
+    border: none;
+    width: 100%;
+    height: 35px;
+    color: white;
+    font-weight: bold;
+    border-radius: 15px;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+.btn-comprar :hover {
+    background-color: coral;
     border: none;
     width: 100%;
     height: 35px;
@@ -459,7 +470,7 @@ input{
     margin-top: 32rem;
 }
 .btn-adicionar-carrinhoF {
-    background: #00C4B4;
+    background: darkred;
     font-size: 30px;
     border: none;
     width: 20rem;
@@ -468,8 +479,10 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+}
+.AdcartF {
     margin-left: -20rem;
-    margin-top: 39rem;
+    margin-top: 40rem;
 }
 .btn-primary:hover {
     background-color: #e35d5b;
@@ -785,7 +798,7 @@ text-align:center;
 }
 
 .btn-adicionar-carrinho {
-    background: #00C4B4;
+    background: darkred;
     color: white;
     border: none;
     padding: 18px 40px;
@@ -955,30 +968,47 @@ body {
 }
 
 .profile-card {
-    max-width: 500px;
-    margin: auto;
-    background: white;
+    background: #fff;
     padding: 30px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    transition: all .3s ease;
 }
 
-.profile-image {
-    width: 140px;
-    height: 140px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 4px solid #4f46e5;
-    margin-bottom: 15px;
-}
+    .profile-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+    }
+
+    .profile-card h3 {
+        font-weight: 600;
+        color: #444;
+        letter-spacing: 0.5px;
+    }
+
+    .profile-card p {
+        font-size: 1.1rem;
+        margin: 8px 0;
+    }
+
+    .profile-card strong {
+        color: #222;
+    }
+
+    .profile-card hr {
+        margin: 20px 0;
+        border-top: 1px solid #ddd;
+    }
 
 .btn-logout {
-    background: #dc2626;
-    color: white;
+    background: #e63946;
+    border: none;
+    padding: 10px 0;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    transition: all .3s;
 }
-
     .btn-logout:hover {
-        background: #b91c1c;
-        color: white;
+        background: #d62828;
+        transform: scale(1.02);
     }

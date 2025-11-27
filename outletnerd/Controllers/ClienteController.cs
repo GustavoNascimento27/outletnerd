@@ -57,7 +57,7 @@ namespace outletnerd.Controllers
 
             HttpContext.Session.SetInt32("UserId", result.IdCliente);
             HttpContext.Session.SetString("UserEmail", result.Email);
-            HttpContext.Session.SetString("UserEmail", result.Nome);
+            HttpContext.Session.SetString("UserNome", result.Nome);
 
             return RedirectToAction("Login", "Cliente");
         }
@@ -66,22 +66,18 @@ namespace outletnerd.Controllers
             int? id = HttpContext.Session.GetInt32("UserId");
             string nome = HttpContext.Session.GetString("UserNome");
             string email = HttpContext.Session.GetString("UserEmail");
-            string senha = HttpContext.Session.GetString("UserSenha");
+
             
             if (id == null)
             {
                 return RedirectToAction("Login", "Cliente");
             }
 
-            Cliente cliente = new Cliente
-            {
-                IdCliente = id.Value,
-                Email = email,
-                Senha = senha,
-                Nome = nome
-            };
+            ViewBag.UserId = id;
+            ViewBag.Nome = nome;
+            ViewBag.Email = email;
 
-            return View(cliente);
+            return View();
 
         }
 

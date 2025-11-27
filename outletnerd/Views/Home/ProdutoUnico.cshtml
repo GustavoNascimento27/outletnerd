@@ -57,10 +57,10 @@
             <button type="submit" class="btn-comprarF">Comprar Agora</button>
         </form>
 
-        <form class="btn-adicionar-carrinhoF" asp-controller="Carrinho" asp-action="AddToCart" method="post">
+        <form class="AdcartF" asp-controller="Carrinho" asp-action="AddToCart" method="post">
             <input type="hidden" name="produtoId" value="@Model.IdProduto" />
             <input type="hidden" name="quantidade" value="1" />
-            <button type="submit" class="btn-adicionar-carrinho">Adicionar ao Carrinho</button>
+            <button type="submit" class="btn-adicionar-carrinhoF">Adicionar ao Carrinho</button>
         </form>
     </div>
 </div>
