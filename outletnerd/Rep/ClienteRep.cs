@@ -260,7 +260,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT IdFuncionario, Email, Senha FROM Cliente WHERE Email=@Email AND Senha=@Senha", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdCliente, Email, Senha FROM Cliente WHERE Email=@Email AND Senha=@Senha", conexao);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
@@ -272,7 +272,7 @@ namespace outletnerd.Rep
                         Cliente cliente = new Cliente
                         {
                             Senha = (string)dr["Senha"],
-                            IdCliente = (int)dr["IdFuncionario"],
+                            IdCliente = (int)dr["IdCliente"],
                             Email = (string)dr["Email"]
                         };
                         return cliente;
@@ -297,10 +297,7 @@ namespace outletnerd.Rep
             throw new NotImplementedException();
         }
 
-        ClienteRep InCliente.Login(string Email, string Senha)
-        {
-            throw new NotImplementedException();
-        }
+
     }
 
 

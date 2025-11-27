@@ -36,19 +36,15 @@ namespace outletnerd.Controllers
         [HttpGet]
         public IActionResult Login()
         {
+            ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Email = HttpContext.Session.GetString("UserEmail");
+
             return View();
         }
         [HttpPost]
         public IActionResult Login(string Email, string Senha, Cliente cliente)
         {
-            if (string.IsNullOrWhiteSpace(Email) || string.IsNullOrWhiteSpace(Senha))
-            {
-                TempData["Mensagem"] = "Preencha todos os campos.";
-                TempData["TipoMensagem"] = "warning";
-                return RedirectToAction("Login", "Cliente");
-            }
             var result = _inCliente.Login(Email, Senha);
-
 
             if (result == null)
             {
@@ -57,10 +53,37 @@ namespace outletnerd.Controllers
                 return RedirectToAction("Login", "Cliente");
             }
 
-            HttpContext.Session.SetInt32("UserId", cliente.IdCliente);
-            HttpContext.Session.SetString("UserEmail", cliente.Email);
-            HttpContext.Session.SetString("UserSenha", cliente.Senha);
-            return RedirectToAction("Index", "Cliente");
+            HttpContext.Session.SetInt32("UserId", result.IdCliente);
+            HttpContext.Session.SetString("UserEmail", result.Email);
+
+            return RedirectToAction("Login", "Cliente");
+        }
+        public IActionResult Perfil()
+        {
+            int? id = HttpContext.Session.GetInt32("UserId");
+            string email = HttpContext.Session.GetString("UserEmail");
+            string senha = HttpContext.Session.GetString("UserSenha");
+
+            if (id == null)
+            {
+                return RedirectToAction("Login", "Cliente");
+            }
+
+            Cliente cliente = new Cliente
+            {
+                IdCliente = id.Value,
+                Email = email,
+                Senha = senha
+            };
+
+            return View(cliente);
+
+        }
+
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Clear();
+            return RedirectToAction("Login", "Cliente");
         }
         public IActionResult Compra()
         {

@@ -1,47 +1,50 @@
 ﻿@model outletnerd.Models.Cliente
 @{
     ViewData["Title"] = "Cadastro";
+    var logado = ViewBag.UserId != null;
 }
-<div class="text-center">
-    <header>
+<nav class="navbar-murph">
 
-        <nav class="navbar-murph">
+    <div class="logo">
+        <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+    </div>
+    <div class="search-bar">
+        <form method="get" action="@Url.Action("Index", "YourController")">
+            <div class="input-group">
+                <!--<button type="submit" class="btn-busca">Buscar</button>-->
 
-            <div class="logo">
-                <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
+                <div class="asearch-container">
+                    <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                    <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
+                </div>
+
             </div>
-            <div class="search-bar">
-                <form method="get" action="@Url.Action("Index", "YourController")">
-                    <div class="input-group">
-                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
-
-                        <div class="asearch-container">
-                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
-                            <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
-                        </div>
-
-                    </div>
-                </form>
-            </div>
+        </form>
+    </div>
 
 
-            <div class="nav_btn">
-                <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
-                <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
-            </div>
+    <div class="nav_btn">
+        <a asp-controller="Carrinho" asp-action="Index" class="navbar-icon1"><img src="~/img/carrinho.png" /></a>
+        <a asp-controller="Cliente" asp-action="CadastrarC" class="navbar-icon2"><img src="~/img/usericon.png" /> </a>
+    </div>
 
-        </nav>
+</nav>
 
-        <div class="navbar-categorias">
-            <div class="navbar-cat">
-                <ul>
-                    <li class="itemMenu"><a asp-controller="Cliente" asp-action="CadastrarC">Cadastro de Clientes</a></li>
-                    <li class="itemMenu"><a asp-controller="Cliente" asp-action="Login">Login de Clientes</a></li>
-                    <li class="itemMenu"><a asp-controller="Funcionario" asp-action="Login">Login de Administradores</a></li>
-                </ul>
-            </div>
+<div class="navbar-categorias">
+    <div class="navbar-cat">
+        <ul>
+            <li class="itemMenu"><a asp-controller="Cliente" asp-action="CadastrarC">Cadastro de Clientes</a></li>
+            <li class="itemMenu"><a asp-controller="Cliente" asp-action="Login">Login de Clientes</a></li>
+            <li class="itemMenu"><a asp-controller="Funcionario" asp-action="Login">Login de Administradores</a></li>
+        </ul>
+    </div>
 
-        </div>
+</div>
+@if (!logado)
+{
+
+
+        
 <h1 class="CdC">Login de Clientes</h1>
 <div class="d-gridC">
     <div class="colC">
@@ -60,4 +63,23 @@
             </div>
         </form>
     </div>
-</div>
+</div> 
+}
+else {
+
+    <div class="container mt-5">
+        <div class="card p-4" style="max-width:500px; margin:auto">
+            <h3 class="text-center mb-3">Meu Perfil</h3>
+
+            <p><strong>ID:</strong> @ViewBag.UserId</p>
+            <p><strong>Email:</strong> @ViewBag.Email</p>
+
+            <hr>
+
+            <div class="d-grid">
+                <a href="/Cliente/Logout" class="btn btn-danger">Sair</a>
+            </div>
+        </div>
+    </div>
+}
+

@@ -5,7 +5,7 @@ namespace outletnerd.Rep.Interfaces
     {
         void CadastrarCliente(Cliente cliente);
         public IEnumerable<Cliente> ObterCliente();
-        ClienteRep Login(string Email, string Senha);
+        public Cliente Login(string Email, string Senha);
         public Cliente ObterCliente(int Id);
         public Cliente BuscaEmailCliente(string email);
 
