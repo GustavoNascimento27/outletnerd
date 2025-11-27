@@ -33,12 +33,14 @@ namespace outletnerd.Rep
                 comand.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
                 comand.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
                 comand.Parameters.Add("@Senha", MySqlDbType.VarChar).Value = cliente.Senha;
-                comand.Parameters.Add("@Telefone", MySqlDbType.Int32).Value = cliente.Telefone;
+                comand.Parameters.Add("@Telefone", MySqlDbType.VarChar).Value = cliente.Telefone;
 
                 comand.ExecuteNonQuery();
                 conexao.Close();
             }
         }
+
+
         public IEnumerable<Cliente> ObterTodosClientes()
         {
             List<Cliente> cliList = new List<Cliente>();
@@ -62,7 +64,7 @@ namespace outletnerd.Rep
                         {
                             IdCliente = Convert.ToInt32(dr["Id"]),
                             Nome = (string)(dr["Nome"]),
-                            Telefone = Convert.ToInt32(dr["Telefone"]),
+                            Telefone = (string)(dr["Telefone"]),
                             Email = Convert.ToString(dr["Email"]),
                             Senha = Convert.ToString(dr["Senha"]),
                          
@@ -159,7 +161,7 @@ namespace outletnerd.Rep
                 {
                     cliente.IdCliente = (Int32)(dr["Id"]);
                     cliente.Nome = (string)(dr["Nome"]);
-                    cliente.Telefone = (Int32)(dr["Telefone"]);
+                    cliente.Telefone = (string)(dr["Telefone"]);
                     cliente.Email = (string)(dr["Email"]);
                     cliente.Senha = (string)(dr["Senha"]);
 
@@ -243,7 +245,7 @@ namespace outletnerd.Rep
                         {
                             IdCliente = Convert.ToInt32(dr["Id"]),
                             Nome = (string)(dr["Nome"]),
-                            Telefone = Convert.ToInt32(dr["Telefone"]),
+                            Telefone = (string)(dr["Telefone"]),
                             Email = Convert.ToString(dr["Email"]),
                             Senha = Convert.ToString(dr["Senha"]),
                         });

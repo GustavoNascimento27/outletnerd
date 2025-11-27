@@ -466,8 +466,8 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    margin-left:-15rem;
-    margin-top: 32rem;
+    margin-left:-40rem;
+    margin-top: 30rem;
 }
 .btn-adicionar-carrinhoF {
     background: darkred;
@@ -481,8 +481,8 @@ input{
     cursor: pointer;
 }
 .AdcartF {
-    margin-left: -20rem;
-    margin-top: 40rem;
+    margin-left: -30rem;
+    margin-top: 36rem;
 }
 .btn-primary:hover {
     background-color: #e35d5b;
@@ -744,7 +744,8 @@ text-align:center;
 
 .produto-info-nome{
     flex: 1;
-    margin-left: 8.5rem;
+    width:60%;
+    margin-left: 4.5rem;
     font-size: 60px;
     display: flex;
     flex-direction: column;
@@ -774,7 +775,8 @@ text-align:center;
     font-weight: bold;
 }
 .preco-atualF {
-    margin-left: 7.5rem;
+    color: darkred;
+    margin-left: 2.5rem;
     font-size: 35px;
     color: #00C4B4;
     font-weight: bold;

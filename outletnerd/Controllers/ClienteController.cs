@@ -21,10 +21,12 @@ namespace outletnerd.Controllers
         [HttpGet]
         public IActionResult CadastrarC()
         {
-            
+            TempData["Mensagem"] = "Conta criada com sucesso!";
+            TempData["TipoMensagem"] = "success";
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public IActionResult CadastrarC(Cliente cliente)
         {
             if (ModelState.IsValid)
@@ -34,6 +36,7 @@ namespace outletnerd.Controllers
             }
             return View(cliente);
         }
+
         [HttpGet]
         public IActionResult Login()
         {

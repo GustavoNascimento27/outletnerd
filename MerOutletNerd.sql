@@ -112,5 +112,6 @@ END$$
 
 DELIMITER ;
 SELECT IdFuncionario, Email, Senha FROM Funcionario WHERE Email=@Email AND Senha=@Senha
-
-insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Luminária Mario', 'Luminária Mario', 104.90, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqwMAlqBLjEJWnZMCG-_KGDF3RISqhjjeabA&s', 100, 'Decorações');
+DELETE FROM Produto
+WHERE Nome LIKE '%kaka%';
+insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Camisa Harry Potter', 'Camisa Harry Potter', 80.90, 'https://static.zattini.com.br/produtos/camiseta-masculina-harry-potter-brasao-grifinoria-edicao-especial/06/5YP-0120-006/5YP-0120-006_zoom1.jpg?ts=1694579126', 100, 'Roupas');
