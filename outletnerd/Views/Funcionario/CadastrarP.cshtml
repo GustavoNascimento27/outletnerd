@@ -82,16 +82,14 @@
 <div>
     <a asp-controller="Home" asp-action="Index">Voltar</a>
 </div>
-
-<div class="proditem">
-
-
+            <div class="d-gridFF">
     @if (Model != null && Model.Any())
     {
         foreach (var produto in Model)
         {
-            <div class="produtoitem" style="display:flex; background:white; border-radius:15px; margin-bottom:2rem; box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
-
+            <div class="colFF">
+            <div class="cardFF">
+            
                 <img src="@Url.Content(produto.ImageUrl)" class="ImgP" alt="@produto.Nome"
                      style="width:160px; height:160px; object-fit:cover; border-radius:15px; margin:15px;">
 
@@ -110,6 +108,8 @@
                     </div>
                 </div>
             </div>
+            </div>
+           
         }
     }
 

@@ -28,7 +28,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand comand = new MySqlCommand("insert into Cliente (Email, Nome, Senha, Telefone) values (@Email, @Nome, @Senha, @Telefone)", conexao);
+                MySqlCommand comand = new MySqlCommand("insert into Cliente (Email, Nome, Senha, Telefone) values (@Email, @Nome, @Senha, @Telefone);", conexao);
 
                 comand.Parameters.Add("@Email", MySqlDbType.VarChar).Value = cliente.Email;
                 comand.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
@@ -45,7 +45,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT * FROM CLIENTE", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT * FROM CLIENTE;", conexao);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);
 
@@ -79,7 +79,7 @@ namespace outletnerd.Rep
                 using (var conexao = new MySqlConnection(_connectionString))
                 {
                     conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("update Cliente set Nome=@Nome, Nascimento=@Nascimento, Sexo=@Sexo,  CPF=@CPF, Telefone=@Telefone, Email=@Email, Senha=@Senha, Situacao=@Situacao WHERE Id=@Id ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("update Cliente set Nome=@Nome, Nascimento=@Nascimento, Sexo=@Sexo,  CPF=@CPF, Telefone=@Telefone, Email=@Email, Senha=@Senha, Situacao=@Situacao WHERE Id=@Id;", conexao);
 
                     cmd.Parameters.Add("@Id", MySqlDbType.VarChar).Value = cliente.IdCliente;
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
@@ -107,7 +107,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("update Cliente set Situacao=@Situacao WHERE Id=@Id ", conexao);
+                MySqlCommand cmd = new MySqlCommand("update Cliente set Situacao=@Situacao WHERE Id=@Id;", conexao);
 
                 cmd.Parameters.Add("@Id", MySqlDbType.VarChar).Value = Id;
                 cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = Situacao;
@@ -122,7 +122,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("update Cliente set Situacao=@Situacao WHERE Id=@Id ", conexao);
+                MySqlCommand cmd = new MySqlCommand("update Cliente set Situacao=@Situacao WHERE Id=@Id; ", conexao);
 
                 cmd.Parameters.Add("@Id", MySqlDbType.VarChar).Value = Id;
                 cmd.Parameters.Add("@Situacao", MySqlDbType.VarChar).Value = Situacao;
@@ -135,7 +135,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("delete from Cliente WHERE Id=@Id", conexao);
+                MySqlCommand cmd = new MySqlCommand("delete from Cliente WHERE Id=@Id;", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
                 int i = cmd.ExecuteNonQuery();
                 conexao.Close();
@@ -147,7 +147,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("select * from Cliente WHERE IdCliente=@Id", conexao);
+                MySqlCommand cmd = new MySqlCommand("select * from Cliente WHERE IdCliente=@Id;", conexao);
                 cmd.Parameters.AddWithValue("@Id", Id);
 
                 MySqlDataAdapter da = new MySqlDataAdapter(cmd);

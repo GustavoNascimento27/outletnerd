@@ -30,8 +30,9 @@ namespace outletnerd.Controllers
             if (ModelState.IsValid)
             {
                 _inCliente.CadastrarCliente(cliente);
+                return RedirectToAction("Index", "Home");
             }
-            return RedirectToAction("Index", "Home");
+            return View(cliente);
         }
         [HttpGet]
         public IActionResult Login()

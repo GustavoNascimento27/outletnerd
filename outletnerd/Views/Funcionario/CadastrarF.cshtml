@@ -74,14 +74,12 @@
 
 <h3>Funcionários cadastrados</h3>
 
-<div class="d-grid">
+<div class="d-gridFF">
     @foreach (var funcionario in Model)
     {
-        <div class="col">
-            <div class="card">
-                <div class="produtoitem"
-                     style="display:flex; background:white; border-radius:15px; margin-bottom:25px;
-                            box-shadow:0 4px 15px rgba(0,0,0,0.1); overflow:hidden;">
+        <div class="colFF">
+            <div class="cardFF">
+                
 
                     <div style="padding:20px; flex:1;">
                         <h5 class="TituloP">@funcionario.Nome</h5>
@@ -96,7 +94,7 @@
 
                 </div>
             </div>
-        </div>
+    
     }
 </div>
 

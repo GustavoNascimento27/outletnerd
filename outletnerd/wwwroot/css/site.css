@@ -168,10 +168,26 @@ input{
     border-radius: 15px;
     
 }
-    .col:hover 
-    {
-        transform: translateY(-8px);
-    }
+.colFF {
+    transition: transform 0.2s ease;
+    margin-bottom: 1%;
+    border: 1px solid lightgray;
+    border-radius: 15px;
+    width: 500px;
+}
+.cardFF{
+    width:600px;
+}
+.d-gridFF {
+    width: 120%;
+    gap: 8rem;
+    display: block;
+    margin-left:5rem;
+    border-radius: 17px;
+}
+.col:hover {
+    transform: translateY(-8px);
+}
 .d-gridC {
     
     width: 100%;
@@ -429,10 +445,34 @@ input{
     cursor: pointer;
     margin-top: 1rem;
 }
-
+.btn-comprarF {
+    font-size:30px;
+    background-color: green;
+    border: none;
+    width: 20rem;
+    height: 70px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left:-15rem;
+    margin-top: 32rem;
+}
+.btn-adicionar-carrinhoF {
+    background: #00C4B4;
+    font-size: 30px;
+    border: none;
+    width: 20rem;
+    height: 70px;
+    color: white;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: -20rem;
+    margin-top: 39rem;
+}
 .btn-primary:hover {
     background-color: #e35d5b;
-    
 }
 .cartTitle1{
     margin-top:3%;
@@ -665,7 +705,7 @@ text-align:center;
 .produto-card {
     display: flex;
     height:55rem;
-    width: 1000rem;
+    width: 1200rem;
     background: white;
     border-radius: 20px;
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
@@ -715,11 +755,17 @@ text-align:center;
 }
 
 .preco-atual {
-    font-size: 2.8rem;
+    margin-left:7.5rem;
+    font-size: 60px;
     color: #00C4B4;
     font-weight: bold;
 }
-
+.preco-atualF {
+    margin-left: 7.5rem;
+    font-size: 35px;
+    color: #00C4B4;
+    font-weight: bold;
+}
 .desconto {
     display: block;
     font-size: 1.1rem;
