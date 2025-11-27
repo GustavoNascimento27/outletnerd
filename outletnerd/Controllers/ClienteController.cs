@@ -27,7 +27,7 @@ namespace outletnerd.Controllers
         [HttpPost]
         public IActionResult CadastrarC(Cliente cliente)
         {
-            if (!ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 _inCliente.CadastrarCliente(cliente);
             }
@@ -37,14 +37,15 @@ namespace outletnerd.Controllers
         public IActionResult Login()
         {
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
+            ViewBag.Nome = HttpContext.Session.GetString("UserNome");
             ViewBag.Email = HttpContext.Session.GetString("UserEmail");
-
+            
             return View();
         }
         [HttpPost]
-        public IActionResult Login(string Email, string Senha, Cliente cliente)
+        public IActionResult Login(string Email, string Senha, string Nome, Cliente cliente)
         {
-            var result = _inCliente.Login(Email, Senha);
+            var result = _inCliente.Login(Email, Senha, Nome);
 
             if (result == null)
             {
@@ -55,15 +56,17 @@ namespace outletnerd.Controllers
 
             HttpContext.Session.SetInt32("UserId", result.IdCliente);
             HttpContext.Session.SetString("UserEmail", result.Email);
+            HttpContext.Session.SetString("UserEmail", result.Nome);
 
             return RedirectToAction("Login", "Cliente");
         }
         public IActionResult Perfil()
         {
             int? id = HttpContext.Session.GetInt32("UserId");
+            string nome = HttpContext.Session.GetString("UserNome");
             string email = HttpContext.Session.GetString("UserEmail");
             string senha = HttpContext.Session.GetString("UserSenha");
-
+            
             if (id == null)
             {
                 return RedirectToAction("Login", "Cliente");
@@ -73,7 +76,8 @@ namespace outletnerd.Controllers
             {
                 IdCliente = id.Value,
                 Email = email,
-                Senha = senha
+                Senha = senha,
+                Nome = nome
             };
 
             return View(cliente);

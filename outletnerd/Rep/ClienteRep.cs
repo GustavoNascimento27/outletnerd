@@ -79,8 +79,7 @@ namespace outletnerd.Rep
                 using (var conexao = new MySqlConnection(_connectionString))
                 {
                     conexao.Open();
-                    MySqlCommand cmd = new MySqlCommand("update Cliente set Nome=@Nome, Nascimento=@Nascimento, Sexo=@Sexo,  CPF=@CPF, " +
-                        " Telefone=@Telefone, Email=@Email, Senha=@Senha, Situacao=@Situacao WHERE Id=@Id ", conexao);
+                    MySqlCommand cmd = new MySqlCommand("update Cliente set Nome=@Nome, Nascimento=@Nascimento, Sexo=@Sexo,  CPF=@CPF, Telefone=@Telefone, Email=@Email, Senha=@Senha, Situacao=@Situacao WHERE Id=@Id ", conexao);
 
                     cmd.Parameters.Add("@Id", MySqlDbType.VarChar).Value = cliente.IdCliente;
                     cmd.Parameters.Add("@Nome", MySqlDbType.VarChar).Value = cliente.Nome;
@@ -255,12 +254,13 @@ namespace outletnerd.Rep
         }
 
 
-        public Cliente Login(string Email, string Senha)
+        public Cliente Login(string Email, string Senha, string Nome)
         {
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT IdCliente, Email, Senha FROM Cliente WHERE Email=@Email AND Senha=@Senha", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdCliente, Nome, Email, Senha FROM Cliente WHERE @Nome=@Nome and Email=@Email AND Senha=@Senha", conexao);
+                cmd.Parameters.AddWithValue("@Nome", Nome);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);
 
@@ -271,6 +271,7 @@ namespace outletnerd.Rep
 
                         Cliente cliente = new Cliente
                         {
+                            Nome = (string)dr["Nome"],
                             Senha = (string)dr["Senha"],
                             IdCliente = (int)dr["IdCliente"],
                             Email = (string)dr["Email"]
@@ -297,7 +298,10 @@ namespace outletnerd.Rep
             throw new NotImplementedException();
         }
 
-
+        public Cliente Login(string Email, string Senha)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

@@ -2,6 +2,7 @@
 @{
     ViewData["Title"] = "Cadastro";
     var logado = ViewBag.UserId != null;
+    
 }
 <nav class="navbar-murph">
 
@@ -50,6 +51,9 @@
     <div class="colC">
 
         <form asp-controller="Cliente" asp-action="Login">
+                <div class="form-groupC">
+                    <input asp-for="Nome" class="form-controlC" placeholder="Nome" />
+                </div>
             <div class="form-groupC">
                 <input asp-for="Email" class="form-controlC" placeholder="Email" />
             </div>
@@ -57,10 +61,11 @@
                 <input asp-for="Senha" type="password" class="form-controlC" placeholder="Senha" />
             </div>
             <div class="form-groupC" style="text-align:center;">
-                <input type="submit" class="btn-login" value="Cadastro" />
+                <input type="submit" class="btn-login" value="Login" />
             </div>
             <div>
             </div>
+            
         </form>
     </div>
 </div> 
@@ -72,6 +77,7 @@ else {
             <h3 class="text-center mb-3">Meu Perfil</h3>
 
             <p><strong>ID:</strong> @ViewBag.UserId</p>
+            <p><strong>Nome:</strong> @ViewBag.Nome</p>
             <p><strong>Email:</strong> @ViewBag.Email</p>
 
             <hr>
