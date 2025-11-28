@@ -64,7 +64,7 @@ namespace outletnerd.Controllers
             if (produtoExcluido == null) { 
                 return NotFound();
             }
-            return RedirectToAction("CadastrarP");
+            return RedirectToAction("CadastrarP", "Funcionario");
         }
         [HttpGet]
         public IActionResult Login()
