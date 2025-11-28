@@ -51,21 +51,194 @@
             
         </div>
 
-        <form asp-controller="Home" asp-action="ProdutoUnico" method="post">
-            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-            <input type="hidden" name="quantidade" value="1" />
-            <button type="submit" class="btn-comprarF">Comprar Agora</button>
-        </form>
 
-        <form class="AdcartF" asp-controller="Carrinho" asp-action="AddToCart" method="post">
-            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
-            <input type="hidden" name="quantidade" value="1" />
+        <button type="button" id="btnAbrirModal" class="btn-comprarF">Comprar Agora</button>
+
+        <form asp-controller="Carrinho" asp-action="AddCarrinho" method="post">
+            <input  type="hidden" name="produtoId" value="@Model.IdProduto" />
             <button type="submit" class="btn-adicionar-carrinhoF">Adicionar ao Carrinho</button>
-        </form>
-    </div>
+                    </form>
 </div>
 @if (Model == null)
 {
     <h2>Produto não encontrado.</h2>
     return;
 }
+
+<style>
+    .modal-compra {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-content {
+    background: #fff;
+    width: 430px;
+    padding: 25px;
+    border-radius: 14px;
+    box-shadow: 0 0 25px rgba(0,0,0,0.3);
+    animation: fadeIn .3s ease;
+    position: relative;
+}
+
+keyframes fadeIn {
+    from { opacity: 0; transform: scale(0.95); }
+    to { opacity: 1; transform: scale(1); }
+}
+
+.close-modal {
+    position: absolute;
+    top: 12px;
+    right: 15px;
+    font-size: 22px;
+    cursor: pointer;
+    color: #555;
+}
+
+.resumo {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.img-produto {
+    width: 90px;
+    height: 90px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.inputF {
+    width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    margin-bottom: 12px;
+}
+
+.btn-confirmar {
+    width: 100%;
+    padding: 12px;
+    background: darkred;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 17px;
+}
+.qr-pix {
+    display: none;
+    text-align: center;
+    margin-bottom: 15px;
+}
+</style>
+<!-- Modal -->
+<div id="modalCompra" class="modal-compra">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <h2>Finalizar Compra</h2>
+
+        <!-- Resumo -->
+        <div class="resumo">
+            <img src="@Url.Content(Model.ImageUrl)" class="img-produto" />
+            <div>
+                <p><strong>@Model.Nome</strong></p>
+                <p>Quantidade: <strong>1</strong></p>
+                <p>Preço: <strong>R$ @Model.Preco.ToString("F2")</strong></p>
+            </div>
+        </div>
+            <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+            <input type="hidden" name="quantidade" value="1" />
+
+            <!-- Forma de pagamento -->
+            <form method="post" id="formCompra" onsubmit="confirmarCompra(event)">
+
+            <label>Forma de Pagamento:</label>
+            <select name="formaPagamento" id="formaPagamento" class="inputF">
+                <option value="credito">Cartão de Crédito</option>
+                <option value="debito">Cartão de Débito</option>
+                <option value="pix">PIX</option>
+                <option value="boleto">Boleto</option>
+            </select>
+
+            <!-- Bandeira do cartão -->
+            <div id="bandeiraCartaoContainer">
+                <label>Bandeira do Cartão:</label>
+                <select name="bandeiraCartao" class="inputF">
+                    <option value="visa">Visa</option>
+                    <option value="mastercard">MasterCard</option>
+                    <option value="elo">Elo</option>
+                    <option value="amex">American Express</option>
+                </select>
+            </div>
+
+            <!-- Agência bancária -->
+            <div id="agenciaContainer">
+                <label>Agência Bancária:</label>
+                <input type="text" name="agencia" id="agencia" class="inputF" placeholder="0000-0" maxlength="6" />
+            </div>
+
+            <!-- QR Code PIX -->
+            <div id="qrPix" class="qr-pix">
+                <p>Escaneie o QR Code:</p>
+                <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=PAGAMENTO-PIX-FICTICIO" />
+            </div>
+
+            <button type="submit" class="btn-confirmar">Confirmar Compra</button>
+            </form>
+    </div>
+</div>
+
+<script>
+   const modal = document.getElementById("modalCompra");
+const btnAbrir = document.getElementById("btnAbrirModal");
+const fechar = document.querySelector(".close-modal");
+
+btnAbrir.onclick = () => modal.style.display = "flex";
+fechar.onclick = () => modal.style.display = "none";
+window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+const formaPagamento = document.getElementById("formaPagamento");
+const bandeira = document.getElementById("bandeiraCartaoContainer");
+const agencia = document.getElementById("agenciaContainer");
+const qrPix = document.getElementById("qrPix");
+
+formaPagamento.addEventListener("change", () => {
+    bandeira.style.display = "none";
+    agencia.style.display = "none";
+    qrPix.style.display = "none";
+
+    if (formaPagamento.value === "credito" || formaPagamento.value === "debito") {
+        bandeira.style.display = "block";
+        agencia.style.display = "block";
+    }
+
+    if (formaPagamento.value === "pix") {
+        qrPix.style.display = "block";
+    }
+});
+
+// máscara automática para agência: 0000-0
+document.getElementById("agencia").addEventListener("input", function () {
+    let v = this.value.replace(/\D/g, "");
+    if (v.length > 4) v = v.slice(0, 4) + "-" + v.slice(4, 5);
+    this.value = v;
+});
+
+// alerta final
+    function confirmarCompra(event) {
+        event.preventDefault(); // impede envio imediato
+        alert("Compra realizada com sucesso!");
+
+        // envia o form depois do alerta
+        event.target.submit();
+    }
+</script>

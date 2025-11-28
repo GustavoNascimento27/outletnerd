@@ -59,11 +59,7 @@ namespace outletnerd.Controllers
         [HttpPost]
         public async Task<IActionResult> Excluir(int id)
         {
-            var produtoExcluido = await _produtoRep.Excluir(id);
-
-            if (produtoExcluido == null) { 
-                return NotFound();
-            }
+             await _produtoRep.Excluir(id);
             return RedirectToAction("CadastrarP", "Funcionario");
         }
         [HttpGet]

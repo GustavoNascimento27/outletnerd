@@ -190,7 +190,7 @@ input{
 }
 .d-gridC {
     
-    width: 100%;
+    width: 50%;
     gap: 15%;
     position: absolute;
     display: flex;
@@ -198,6 +198,7 @@ input{
     justify-content:center;
     margin-top: 2%;
     border-radius: 15px;
+    margin-left:30rem;
 }
 .d-gridC2 {
     width: 100%;
@@ -250,7 +251,7 @@ input{
 }
 
 .btn-login {
-    background: #00C4B4 !important;
+    background-color: darkred ;
     color: white !important;
     width: 22rem;
     height: 3.5rem;
@@ -273,7 +274,7 @@ input{
     cursor: pointer;
 }
 .btn-loginF {
-    background: #00C4B4 !important;
+    background-color:darkred;
     color: white !important;
     width: 22rem;
     height: 3.5rem;
@@ -466,8 +467,8 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    margin-left:-40rem;
-    margin-top: 30rem;
+    margin-left:-30.5rem;
+    margin-top: 32rem;
 }
 .btn-adicionar-carrinhoF {
     background: darkred;
@@ -479,10 +480,13 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
+    margin-left: -20rem;
+    margin-top: 38rem;
 }
 .AdcartF {
-    margin-left: -30rem;
-    margin-top: 36rem;
+    display:flex;
+    margin-left: -28.5%;
+    margin-top: 80rem;
 }
 .btn-primary:hover {
     background-color: #e35d5b;

@@ -50,25 +50,19 @@ namespace outletnerd.Rep
             var sql = "Select IdProduto, Nome, Descricao, Preco, ImageUrl, Quantidade, Categoria from Produto where Categoria = 'Roupas'";
             return await connection.QueryAsync<Produto>(sql);
         }
-        public async Task<Produto?> Excluir(int id)
+        public async Task Excluir(int id)
         {
             using var conexao = new MySqlConnection(_connectionString);
             var produto = await conexao.QueryFirstOrDefaultAsync<Produto>(
                 "SELECT * FROM Produto WHERE IdProduto = @Id",
                 new { Id = id }
-            );
-
-            if (produto == null)
-            {
-                return null;
-            }
-                
+            );   
             await conexao.ExecuteAsync(
                 "DELETE FROM Produto WHERE IdProduto = @Id",
                 new { Id = id }
             );
 
-            return produto;
+            
         }
         public void Atualizar(Produto produto)
         {
