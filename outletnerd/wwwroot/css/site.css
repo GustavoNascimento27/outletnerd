@@ -201,13 +201,14 @@ input{
     margin-left:30rem;
 }
 .d-gridC2 {
-    width: 100%;
+    width: 50rem;
     gap: 15%;
     position: absolute;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 2%;
+    margin-left:36rem;
     border-radius: 15px;
 }
 .CdC{
