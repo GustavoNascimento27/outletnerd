@@ -159,14 +159,13 @@ keyframes fadeIn {
             <input type="hidden" name="quantidade" value="1" />
 
             <!-- Forma de pagamento -->
-            <form method="post" id="formCompra" onsubmit="confirmarCompra(event)">
+            <form id="formCompra" onsubmit="confirmarCompra(event)">
 
             <label>Forma de Pagamento:</label>
             <select name="formaPagamento" id="formaPagamento" class="inputF">
                 <option value="credito">Cartão de Crédito</option>
                 <option value="debito">Cartão de Débito</option>
                 <option value="pix">PIX</option>
-                <option value="boleto">Boleto</option>
             </select>
 
             <!-- Bandeira do cartão -->
@@ -237,8 +236,5 @@ document.getElementById("agencia").addEventListener("input", function () {
     function confirmarCompra(event) {
         event.preventDefault(); // impede envio imediato
         alert("Compra realizada com sucesso!");
-
-        // envia o form depois do alerta
-        event.target.submit();
     }
 </script>

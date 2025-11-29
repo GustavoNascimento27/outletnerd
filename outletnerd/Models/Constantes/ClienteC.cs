@@ -1,6 +1,6 @@
 ﻿namespace outletnerd.Models.Constantes
 {
-    public class Cliente
+    public class ClienteC
     {
         public class SituacaoConstantes
         {

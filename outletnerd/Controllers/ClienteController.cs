@@ -43,6 +43,7 @@ namespace outletnerd.Controllers
             ViewBag.UserId = HttpContext.Session.GetInt32("UserId");
             ViewBag.Nome = HttpContext.Session.GetString("UserNome");
             ViewBag.Email = HttpContext.Session.GetString("UserEmail");
+
             
             return View();
         }

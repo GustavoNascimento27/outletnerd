@@ -3,7 +3,7 @@ using MySql.Data.MySqlClient;
 using NuGet.Protocol.Plugins;
 using outletnerd.Models;
 using outletnerd.Rep.Interfaces;
-using static outletnerd.Models.Constantes.Cliente;
+using static outletnerd.Models.Constantes.ClienteC;
 namespace outletnerd.Rep
 {
     public class ProdutoRep : InProduto

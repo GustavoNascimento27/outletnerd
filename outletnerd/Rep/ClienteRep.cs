@@ -7,7 +7,7 @@ using X.PagedList;
 using X.PagedList.Mvc;
 using X.PagedList.Extensions;
 using static Org.BouncyCastle.Math.EC.ECCurve;
-using static outletnerd.Models.Constantes.Cliente;
+using static outletnerd.Models.Constantes.ClienteC;
 using Microsoft.VisualStudio.Web.CodeGenerators.Mvc.Templates.BlazorIdentity.Pages.Manage;
 
 namespace outletnerd.Rep
@@ -261,7 +261,7 @@ namespace outletnerd.Rep
             using (var conexao = new MySqlConnection(_connectionString))
             {
                 conexao.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT IdCliente, Nome, Email, Senha FROM Cliente WHERE @Nome=@Nome and Email=@Email AND Senha=@Senha", conexao);
+                MySqlCommand cmd = new MySqlCommand("SELECT IdCliente, Nome, Email, Senha FROM Cliente WHERE Nome=@Nome and Email=@Email AND Senha=@Senha", conexao);
                 cmd.Parameters.AddWithValue("@Nome", Nome);
                 cmd.Parameters.AddWithValue("@Email", Email);
                 cmd.Parameters.AddWithValue("@Senha", Senha);

@@ -72,20 +72,18 @@
 }
 else {
 
-    <div class="container mt-5">
-        <div class="card p-4" style="max-width:500px; margin:auto">
-            <h3 class="text-center mb-3">Meu Perfil</h3>
+    <div class="profile-card">
+        <h3 class="profile-title">Meu Perfil</h3>
 
-            <p><strong>ID:</strong> @ViewBag.UserId</p>
+        <div class="profile-info">
             <p><strong>Nome:</strong> @ViewBag.Nome</p>
             <p><strong>Email:</strong> @ViewBag.Email</p>
-
-            <hr>
-
-            <div class="d-grid">
-                <a href="/Cliente/Logout" class="btn btn-danger">Sair</a>
-            </div>
         </div>
+
+            <a asp-controller="Cliente" asp-action="Logout" class="btn btn-primary">
+                Sair
+            </a>
     </div>
+
 }
 

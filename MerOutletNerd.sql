@@ -91,6 +91,17 @@ create table NotaFiscal(
   IdCompra int not null,
   foreign key (IdCompra) references Compra(IdCompra)
 );
+CREATE TABLE HistoricoCompra (
+    IdHistorico INT AUTO_INCREMENT PRIMARY KEY,
+    IdCliente INT NOT NULL,
+    IdProduto INT NOT NULL,
+    Quantidade INT NOT NULL,
+    PrecoTotal DECIMAL(10,2) NOT NULL,
+    DataCompra DATETIME NOT NULL,
+    
+    FOREIGN KEY (IdCliente) REFERENCES Cliente(IdCliente),
+    FOREIGN KEY (IdProduto) REFERENCES Produto(IdProduto)
+);
 select * from Funcionario;
 select * from Cliente;
 select * from Produto;

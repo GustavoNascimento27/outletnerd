@@ -73,13 +73,14 @@ body {
 .busca {
     width: 450px;
     flex: 1;
-    height: 50px; 
+    height: 25px; 
     border: none; 
     border-radius: 30px; 
     background-color: white; 
     color: #333; 
     font-size: 16px;
     outline: none;
+    margin-top:2%;
     margin-right: 10%;
 }
 input{
@@ -172,6 +173,7 @@ input{
     transition: transform 0.2s ease;
     margin-bottom: 1%;
     border: 1px solid lightgray;
+    background-color: white;
     border-radius: 15px;
     width: 500px;
 }
@@ -179,6 +181,7 @@ input{
     width:600px;
 }
 .d-gridFF {
+   
     width: 120%;
     gap: 8rem;
     display: block;
@@ -472,7 +475,7 @@ input{
     margin-top: 32rem;
 }
 .btn-adicionar-carrinhoF {
-    background: darkred;
+    background: black;
     font-size: 30px;
     border: none;
     width: 20rem;
@@ -765,7 +768,12 @@ text-align:center;
 .produto-preco {
     margin-bottom: 20px;
 }
-
+.TituloP{
+    font-size:30px;
+}
+.NomeP {
+    font-size: 20px;
+}
 .preco-antigo {
     font-size: 1.3rem;
     color: #999;
@@ -1018,4 +1026,131 @@ body {
     .btn-logout:hover {
         background: #d62828;
         transform: scale(1.02);
+    }
+/* ========= CONTAINER PRINCIPAL ========= */
+.login-container,
+.profile-card {
+    max-width: 450px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.15);
+    border: 1px solid #e4e4e4;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ========= TÍTULOS ========= */
+.login-title,
+.profile-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* ========= CAMPOS ========= */
+.input-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+    .input-group label {
+        font-size: 0.95rem;
+        margin-bottom: 6px;
+        color: #444;
+        font-weight: 500;
+    }
+
+    .input-group input,
+    .input-group select {
+        padding: 12px;
+        border-radius: 10px;
+        border: 1px solid #ccc;
+        transition: 0.2s;
+        background: #fafafa;
+    }
+
+        .input-group input:focus,
+        .input-group select:focus {
+            border-color: #8b0000;
+            background: #fff;
+            outline: none;
+            box-shadow: 0 0 0 2px rgba(139,0,0,0.15);
+        }
+
+/* ========= BOTÃO ========= */
+.btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.25s;
+}
+
+.btn-primary {
+    background-color: black;
+    color: #fff;
+}
+
+    .btn-primary:hover {
+        background: #a30000;
+    }
+
+/* ========= CARTÃO DE PERFIL ========= */
+.profile-card {
+    max-width: 500px;
+    margin: 60px auto;
+    padding: 30px;
+    border-radius: 15px;
+    background: #fff;
+    box-shadow: 0px 8px 30px rgba(0,0,0,0.15);
+    border: 1px solid #e4e4e4;
+    font-family: "Poppins", sans-serif;
+}
+
+/* ========= TÍTULO DO PERFIL ========= */
+.profile-title {
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: #333;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* ========= BLOCO DE INFORMAÇÕES ========= */
+.profile-info {
+    background: #fafafa;
+    padding: 18px 22px;
+    border-radius: 12px;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 25px;
+}
+
+    .profile-info p {
+        margin: 10px 0;
+        font-size: 1rem;
+        color: #333;
+    }
+
+/* ========= BOTÃO SAIR ========= */
+.btn-primary {
+    background: black; /* Vermelho escuro do seu e-commerce */
+    color: #fff;
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    width: 100%;
+    font-weight: 600;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+    .btn-primary:hover {
+        background: #a30000;
     }

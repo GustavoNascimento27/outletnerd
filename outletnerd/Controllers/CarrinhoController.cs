@@ -47,6 +47,21 @@ namespace Toycom.Controllers
                 return RedirectToAction("Index", "Carrinho");
             }
         }
+        [HttpPost]
+        public async Task<IActionResult> AddCarrinhoH(int produtoId, int quantidade = 1)
+        {
+            var produto = await _produtoRep.ProdutoPorId(produtoId);
+            if (produto == null)
+            {
+                TempData["Message"] = "Produto não encontrado."; 
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                _carrinhoRep.AddCarrinho(HttpContext.Session, produto, quantidade);
+                return RedirectToAction("Login", "Cliente");
+            }
+        }
 
         [HttpPost]
         public IActionResult AlterarQuantidadeItem(int produtoId, int novaQuantidade)
