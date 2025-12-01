@@ -95,10 +95,78 @@ namespace outletnerd.Rep
                 throw new Exception("Erro na aplicação ao atualizar cliente" + ex.Message);
             }
         }
-
-        /*void InProduto.Excluir(int Id)
+        public Produto BuscarPorNome(string nome)
         {
-            throw new NotImplementedException();
-        }*/
+            using (var conexao = new MySqlConnection(_connectionString))
+            {
+                conexao.Open();
+
+                string sql = @"SELECT IdProduto, Nome, Preco, ImageUrl 
+                       FROM Produto 
+                       WHERE Nome LIKE @nome
+                       LIMIT 1";
+
+                MySqlCommand cmd = new MySqlCommand(sql, conexao);
+                cmd.Parameters.AddWithValue("@nome", "%" + nome + "%");
+
+                using (var dr = cmd.ExecuteReader())
+                {
+                    if (dr.Read())
+                    {
+                        return new Produto
+                        {
+                            IdProduto = dr.GetInt32("IdProduto"),
+                            Nome = dr.GetString("Nome"),
+                            Preco = dr.GetDecimal("Preco"),
+                            ImageUrl = dr.GetString("ImageUrl")
+                        };
+                    }
+                }
+            }
+            return null;
+        }
+        public async Task<List<Produto>> Buscar(string termo)
+        {
+            var lista = new List<Produto>();
+
+            using (MySqlConnection conn = new MySqlConnection(_connectionString))
+            {
+                await conn.OpenAsync();
+
+                string query = @"
+    SELECT IdProduto, Nome, Preco, ImageUrl
+    FROM Produto
+    WHERE (@termo IS NULL OR Nome LIKE CONCAT('%', @termo, '%'));
+";
+
+
+                using (MySqlCommand cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@termo", (object)termo ?? DBNull.Value);
+
+                    using (var reader = await cmd.ExecuteReaderAsync())
+                    {
+                        while (reader.Read())
+                        {
+                            lista.Add(new Produto
+                            {
+                                IdProduto = reader.GetInt32(reader.GetOrdinal("IdProduto")),
+                                Nome = reader.GetString(reader.GetOrdinal("Nome")),
+                                Preco = reader.GetDecimal(reader.GetOrdinal("Preco")),
+                                ImageUrl = reader["ImageUrl"].ToString()
+                            });
+                        }
+                    }
+                }
+            }
+
+            return lista;
+        }
     }
+
+    /*void InProduto.Excluir(int Id)
+    {
+        throw new NotImplementedException();
+    }*/
 }
+

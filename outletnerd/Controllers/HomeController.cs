@@ -49,8 +49,26 @@ namespace outletnerd.Controllers
             var ProdUnic = await _produtoRep.ProdutoPorId(id);
             return View(ProdUnic);
         }
+        [HttpGet]
+        public IActionResult Buscar(string termo)
+        {
+            if (string.IsNullOrWhiteSpace(termo))
+                return RedirectToAction("Index");
 
+            var prod = _produtoRep.BuscarPorNome(termo);
 
+            if (prod == null)
+                return RedirectToAction("Index"); // ou uma página "não encontrado"
+
+            return RedirectToAction("ProdutoUnico", new { id = prod.IdProduto });
+        }
+        [HttpGet]
+        public async Task<IActionResult> BuscarList(string termo)
+        {
+            var produtos = await _produtoRep.Buscar(termo);
+            ViewBag.Termo = termo;
+            return View(produtos);
+        }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()
