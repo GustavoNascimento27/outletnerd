@@ -1,4 +1,8 @@
 
+@font-face {
+    font-family: 'jockeyone-regular';
+    src: url('../fonts/jockeyone-regular.ttf') format('truetype');
+}
 
   html {
       max-width:100%;
@@ -462,8 +466,9 @@ input{
     margin-top: 1rem;
 }
 .btn-comprarF {
-    font-size:30px;
-    background-color: green;
+    font-family: jockeyone-regular,sans-serif;
+    font-size: 30px;
+    background-color: #A90707;
     border: none;
     width: 20rem;
     height: 70px;
@@ -471,11 +476,17 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    margin-left:-30.5rem;
-    margin-top: 32rem;
+    margin-top: 2rem;
+    transition: transform 0.3s ease;
 }
+    .btn-comprarF:hover {
+        transform: scale(1.1);
+    }
+
 .btn-adicionar-carrinhoF {
-    background: black;
+    transition: transform 0.3s ease;
+    font-family: jockeyone-regular,sans-serif;
+    background: #454545;
     font-size: 30px;
     border: none;
     width: 20rem;
@@ -484,9 +495,39 @@ input{
     font-weight: bold;
     border-radius: 10px;
     cursor: pointer;
-    margin-left: -20rem;
-    margin-top: 38rem;
+    margin-top: 2rem;
 }
+.btn-adicionar-carrinhoF:hover {
+    transform: scale(1.1);
+}
+.fretes-gratis {
+    font-family: jockeyone-regular,sans-serif;
+    color: #454545;
+    font-size: 25px;
+    padding-left:10px;
+    padding-right:10px;
+}
+footer {
+    color:white;
+    background-color:black;
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer h2{
+    font-family:jockeyone-regular;
+    font-size:20px;
+}
+
+footer img{
+    width:90px;
+    padding-top:10px;
+}
+
+
+
+ 
 .AdcartF {
     display:flex;
     margin-left: -28.5%;
@@ -578,6 +619,7 @@ text-align:center;
     object-fit: cover;
     border-radius: 12px;
 }
+
 
 .produto-info {
     margin-left: 20px;
@@ -723,16 +765,7 @@ text-align:center;
     font-family: Arial, sans-serif;
 }
 
-.produto-card {
-    display: flex;
-    height:55rem;
-    width: 1200rem;
-    background: white;
-    border-radius: 20px;
-    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-    overflow: hidden;
-    margin-bottom: 40px;
-}
+
 
 .produto-imagem {
     flex: 1;
@@ -751,12 +784,12 @@ text-align:center;
     }
 
 .produto-info-nome{
-    flex: 1;
-    width:60%;
-    margin-left: 4.5rem;
+    font-family:jockeyone-regular,sans-serif;
+    margin-left: 1rem;
     font-size: 60px;
-    display: flex;
-    flex-direction: column;
+}
+.produto-descricao {
+    font-family: jockeyone-regular,sans-serif;
 }
 
 .produto-titulo {
@@ -788,10 +821,11 @@ text-align:center;
     font-weight: bold;
 }
 .preco-atualF {
-    color: darkred;
-    margin-left: 2.5rem;
+    font-family: jockeyone-regular,sans-serif;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
     font-size: 35px;
-    color: #00C4B4;
+    color: #454545;
     font-weight: bold;
 }
 .desconto {
@@ -864,6 +898,17 @@ text-align:center;
     padding: 20px;
     border-radius: 12px;
     text-align: center;
+    display: flex;
+    justify-content:center;
+
+    height: 55rem;
+    width: 1200rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+    overflow: hidden;
+    margin-bottom: 40px;
+}
 }
 
 /* Imagem */
@@ -1027,6 +1072,9 @@ body {
         background: #d62828;
         transform: scale(1.02);
     }
+    hr{
+        width:95%;
+    }
 /* ========= CONTAINER PRINCIPAL ========= */
 .login-container,
 .profile-card {
@@ -1153,4 +1201,11 @@ body {
 
     .btn-primary:hover {
         background: #a30000;
+    }
+
+    .meucarrinho{
+        font-family:jockeyone-regular;
+    }
+    .font-carrinho{
+        font-family:jockeyone-regular
     }
