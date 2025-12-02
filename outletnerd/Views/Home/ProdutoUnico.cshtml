@@ -1,6 +1,8 @@
 ﻿@{
     @model outletnerd.Models.Produto
 }
+
+<body>
 <nav class="navbar-murph">
 
     <div class="logo">
@@ -47,18 +49,26 @@
 
         <div class="produto-infoT">
             <h1 class="produto-info-nome">@Model.Nome</h1>
+            <h2 class="produto-descricao">@Model.Descricao</h2>
             <h2 class="preco-atualF">R$ @Model.Preco.ToString("F2")</h2>
+            <hr>
+            <p class="fretes-gratis">FRETE GRÁTIS APENAS PARA A GRANDE SÃO PAULO</p>
+            <hr>
+            <button type="button" id="btnAbrirModal" class="btn-comprarF">Comprar Agora</button>
+
+            <form asp-controller="Carrinho" asp-action="AddCarrinho" method="post">
+                <input type="hidden" name="produtoId" value="@Model.IdProduto" />
+                <button type="submit" class="btn-adicionar-carrinhoF">Adicionar ao Carrinho</button>
+            </form>
             
         </div>
 
 
-        <button type="button" id="btnAbrirModal" class="btn-comprarF">Comprar Agora</button>
-
-        <form asp-controller="Carrinho" asp-action="AddCarrinho" method="post">
-            <input  type="hidden" name="produtoId" value="@Model.IdProduto" />
-            <button type="submit" class="btn-adicionar-carrinhoF">Adicionar ao Carrinho</button>
-                    </form>
+       
+                    </div>
+              
 </div>
+</body>
 @if (Model == null)
 {
     <h2>Produto não encontrado.</h2>
@@ -76,7 +86,6 @@
     background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
-    z-index: 9999;
 }
 
 .modal-content {
