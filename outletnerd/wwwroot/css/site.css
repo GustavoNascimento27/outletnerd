@@ -70,7 +70,8 @@ body {
     display: flex;
     width: 25px !important;
     height: 25px !important;
-    margin-left: 20vw !important;
+    margin-left: 21vw !important;
+    margin-top: 2% !important;
     position: absolute;
 }
 

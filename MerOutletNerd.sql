@@ -120,9 +120,9 @@ BEGIN
     FROM Produto p
     INNER JOIN Produto ip ON p.IdProduto = ip.IdProduto;
 END$$
-
+set SQL_SAFE_UPDATES = 0
 DELIMITER ;
-SELECT IdFuncionario, Email, Senha FROM Funcionario WHERE Email=@Email AND Senha=@Senha
-DELETE FROM Produto
-WHERE Nome LIKE '%kaka%';
+SELECT IdFuncionario, Email, Senha FROM Funcionario WHERE Email=@Email AND Senha=@Senha;
+update Produto set Nome = 'Minecraft guia de sobrevivência' where Nome = 'Minecraft guia de sobrevivencia';
+
 insert into Produto(Nome,Descricao,Preco,ImageUrl,Quantidade, Categoria)values('Camisa Harry Potter', 'Camisa Harry Potter', 80.90, 'https://static.zattini.com.br/produtos/camiseta-masculina-harry-potter-brasao-grifinoria-edicao-especial/06/5YP-0120-006/5YP-0120-006_zoom1.jpg?ts=1694579126', 100, 'Roupas');

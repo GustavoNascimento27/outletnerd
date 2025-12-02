@@ -4,6 +4,7 @@
     var total = ViewBag.TotalCarrinho as decimal? ?? 0m;
     var descontoPix = total * 0.10m; // 10% de desconto no Pix
     var totalPix = total - descontoPix;
+    var termo = ViewBag.Termo?.ToString();
 }
 <div class="text-center">
     <header>
@@ -14,15 +15,12 @@
                 <a class="navbar-logo" asp-area="" asp-controller="Home" asp-action="Index"><img src="~/img/outlet.png" /></a>
             </div>
             <div class="search-bar">
-                <form method="get" action="@Url.Action("Index", "YourController")">
+                <form method="get" action="@Url.Action("Buscar", "Home")">
                     <div class="input-group">
-                        <!--<button type="submit" class="btn-busca">Buscar</button>-->
-
                         <div class="asearch-container">
-                            <input type="text" name="searchTerm" class="busca" placeholder="O que você está procurando?" />
+                            <input type="text" name="termo" value="@termo" class="busca" placeholder="O que você está procurando?" />
                             <img src="~/img/lupa.png" alt="Buscar" class="search-icon" />
                         </div>
-
                     </div>
                 </form>
             </div>
